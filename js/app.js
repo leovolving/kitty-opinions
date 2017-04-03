@@ -25,8 +25,8 @@ function getQuotes(callback) {
 }
 
 function displayQuote(data) {
-	console.log(data[0]);
-	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + data[0] + '</p>';
+	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' +
+	'<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
 
