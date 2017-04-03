@@ -5,45 +5,49 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.1/featherlight.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
 <div class="six-flags-button">
-	<button type="submit" class="six-flags">Six Flags</button>
+	<button type="submit" class="six-flags" data-featherlight="#mylightbox">Six Flags</button>
 </div>
 
 <div class="ush-button">
-	<button type="submit" class="ush">Universal Studios Hollywood</button>
+	<button type="submit" class="ush" data-featherlight="#mylightbox">Universal Studios Hollywood</button>
 </div>
 
 <div class="hwof-button">
-	<button type="submit" class="hwof">Hollywood Walk of Fame</button>
+	<button type="submit" class="hwof" data-featherlight="#mylightbox">Hollywood Walk of Fame</button>
 </div>
 
 <div class="smb-button">
-	<button type="submit" class="smb">Santa Monica Beach</button>
+	<button type="submit" class="smb" data-featherlight="#mylightbox">Santa Monica Beach</button>
 </div>
 
 <div class="lalive-button">
-	<button type="submit" class="lalive">LA Live</button>
+	<button type="submit" class="lalive" data-featherlight="#mylightbox">LA Live</button>
 </div>
 
 <div class="knotts-button">
-	<button type="submit" class="knotts">Knott's Berry Farm</button>
+	<button type="submit" class="knotts" data-featherlight="#mylightbox">Knott's Berry Farm</button>
 </div>
 
 <div class="disneyland-button">
-	<button type="submit" class="disneyland">Disneyland</button>
+	<button type="submit" class="disneyland" data-featherlight="#mylightbox">Disneyland</button>
 </div>
 
 <div class="dca-button">
-	<button type="submit" class="dca">Disney California Adventure</button>
+	<button type="submit" class="dca" data-featherlight="#mylightbox">Disney California Adventure</button>
 </div>
 
+<div class="container" id="mylightbox" data-featherlight="iframe">
 <div class="results"></div>
 <div class="quote"></div>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.7.1/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
