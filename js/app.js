@@ -16,7 +16,7 @@ function getApiData(url, callback) {
 
 function getQuotes(callback) {
 	var query = {
-		url: 'http://ron-swanson-quotes.herokuapp.com/v2/quotes',
+		url: 'https://ron-swanson-quotes.herokuapp.com/v2/quotes',
 		dataType: 'json',
 		type: 'GET',
 	    success: callback
