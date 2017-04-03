@@ -1,5 +1,4 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-var quote = '';
 
 function getApiData(url, callback) {
 	var query = {
@@ -33,12 +32,11 @@ function displayQuote(data) {
 function displayApiData(data) {
 	console.log(data.response);
 	var venue = data.response.venue;
-	getQuotes(displayQuote);
-	console.log(quote); 
+	getQuotes(displayQuote); 
 	var results = '';
 	results += '<h2>' + venue.name + '</h2>';
 	venue.photos.groups[0].items.forEach(function(item) {
-		results += '<img src="' + item.prefix + '100x100' + item.suffix + '">';
+		results += '<img src="' + item.prefix + '100x100' + item.suffix + '"> ';
 	})
 	// results += '<p>' + quote[0] + '</p>';
 	$('.results').html(results);
