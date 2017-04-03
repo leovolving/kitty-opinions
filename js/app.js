@@ -1,4 +1,5 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
+var quote = '';
 
 function getApiData(url, callback) {
 	var query = {
@@ -13,14 +14,33 @@ function getApiData(url, callback) {
 	$.getJSON(url, query, callback)
 }
 
+function getQuotes(callback) {
+	var query = {
+		url: 'http://ron-swanson-quotes.herokuapp.com/v2/quotes',
+		dataType: 'json',
+		type: 'GET',
+	    success: callback
+		}
+	$.ajax(query);
+}
+
+function displayQuote(data) {
+	console.log(data[0]);
+	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + data[0] + '</p>';
+	$('.quote').html(quoteHTML);
+}
+
 function displayApiData(data) {
 	console.log(data.response);
 	var venue = data.response.venue;
+	getQuotes(displayQuote);
+	console.log(quote); 
 	var results = '';
 	results += '<h2>' + venue.name + '</h2>';
 	venue.photos.groups[0].items.forEach(function(item) {
 		results += '<img src="' + item.prefix + '100x100' + item.suffix + '">';
 	})
+	// results += '<p>' + quote[0] + '</p>';
 	$('.results').html(results);
 }
 
