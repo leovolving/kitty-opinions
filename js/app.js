@@ -100,7 +100,7 @@ function getQuotes(callback) {
 
 function displayQuote(data) {
 	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' +
-	'<a href="http://thecatapi.com" target="blank"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>' + 
+	'<a href="https://thecatapi.com" target="blank"><img src="https://thecatapi.com/api/images/get?format=src&type=gif"></a>' + 
 	data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
