@@ -9,23 +9,36 @@
 </head>
 <body>
 
-<div class="buttons"></div>
+<header>
+	<h1>Kitty Opinions</h1>
+</header>
+<main>
+	<section class="buttons"></section>
 
-<form class="search-form">
-	<fieldset class=search>
-	<label for="search">Search for a place</label>
-		<input type="text" name="searchItem" placeholder="place">
-		<input type="text" name="searchLocation" placeholder="location">
-		<button type="submit" class="searchSubmit">Submit</button>
-	</fieldset>
-</form>
+	<form class="search-form">
+		<fieldset class=search>
+		<label for="search">Search for a place</label>
+			<input type="text" name="searchItem" placeholder="place">
+			<input type="text" name="searchLocation" placeholder="location">
+			<button type="submit" class="searchSubmit">Submit</button>
+		</fieldset>
+	</form>
 
-<div class="search-results"></div>
+	<section class="search-results"></section>
 
-<div class="container" id="fancybox-container" class="iframe">
-<div class="results"></div>
-<div class="quote"></div>
-</div>
+	<section class="container" id="fancybox-container" class="iframe">
+		<div class="results"></div>
+		<div class="quote"></div>
+	</section>
+</main>
+
+<footer>
+	<ul>Sources:
+		<li><a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a></li>
+		<li><a href="https://thecatapi.com/" target="blank" rel="noopener noreferrer">The Cat API</a></li>
+		<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
+	</ul>
+</footer>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
