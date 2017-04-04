@@ -1,5 +1,49 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 
+var buttons = [
+	{
+		class: 'six-flags',
+		content: 'Six Flags'
+	},
+	{
+		class: 'ush',
+		content: 'Universal Studios Hollywood'
+	},
+	{
+		class: 'hwof',
+		content: 'Hollywood Walk of Fame'
+	},
+	{
+		class: 'smb',
+		content: 'Santa Monica Beach'
+	},
+	{
+		class: 'lalive',
+		content: 'LA Live'
+	},
+	{
+		class: 'knotts',
+		content: "Knott's Berry Farm"
+	},
+	{
+		class: 'disneyland',
+		content: 'Disneyland'
+	},
+	{
+		class: 'dca',
+		content: 'Disney California Adventure'
+	}];
+
+function displayButtons() {
+	var buttonsHTML = '';
+	buttons.forEach(function(item) {
+		buttonsHTML += '<button type="submit" class="' +
+		item.class + '" data-fancybox data-src="#fancybox-container">' +
+		item.content + '</button><br>'
+	})
+	$('.buttons').html(buttonsHTML);
+}
+
 function getApiData(url, callback) {
 	var query = {
 		client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
@@ -115,6 +159,7 @@ function knottsClick() {
 }
 
 $(function() {
+	displayButtons();
 	disneylandClick();
 	dcaClick();
 	smbClick();
@@ -123,5 +168,4 @@ $(function() {
 	hwofClick();
 	sixFlagsClick();
 	knottsClick();
-	$('.fancybox').fancybox();
 })
