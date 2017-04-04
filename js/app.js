@@ -42,6 +42,11 @@ function displayApiData(data) {
 	$('.results').html(results);
 }
 
+$.featherlight.defaults.afterClose = function() {
+	$('.results').empty();
+	$('.quote').empty();
+}
+
 function disneylandClick() {
 	$('.disneyland').click(function(e) {
 		e.preventDefault();
