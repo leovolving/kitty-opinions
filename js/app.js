@@ -25,7 +25,8 @@ function getQuotes(callback) {
 
 function displayQuote(data) {
 	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' +
-	'<a href="http://thecatapi.com"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>' + data[0] + '</p>';
+	'<a href="http://thecatapi.com" target="blank"><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></a>' + 
+	data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
 
@@ -36,15 +37,10 @@ function displayApiData(data) {
 	var results = '';
 	results += '<h2>' + venue.name + '</h2>';
 	venue.photos.groups[0].items.forEach(function(item) {
-		results += '<img src="' + item.prefix + '100x100' + item.suffix + '"> ';
+		results += '<a href="' + item.prefix + '100x100' + item.suffix +
+		'" data-fancybox="images"><img src="' + item.prefix + '100x100' + item.suffix + '"></a> ';
 	})
-	// results += '<p>' + quote[0] + '</p>';
 	$('.results').html(results);
-}
-
-$.featherlight.defaults.afterClose = function() {
-	$('.results').empty();
-	$('.quote').empty();
 }
 
 function disneylandClick() {
@@ -127,4 +123,5 @@ $(function() {
 	hwofClick();
 	sixFlagsClick();
 	knottsClick();
+	$('.fancybox').fancybox();
 })
