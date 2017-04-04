@@ -13,11 +13,14 @@
 	<h1>Kitty Opinions</h1>
 </header>
 <main>
-	<section class="buttons"></section>
+	<section class="preset-buttons">
+		<h2>Choose a popular location...</h2>
+		<div class="buttons"></div>
+	</section>
 
 	<form class="search-form">
 		<fieldset class=search>
-		<label for="search">Search for a place</label>
+		<label for="search">...or search for a place.</label>
 			<input type="text" name="searchItem" placeholder="place">
 			<input type="text" name="searchLocation" placeholder="location">
 			<button type="submit" class="searchSubmit">Submit</button>
@@ -26,7 +29,7 @@
 
 	<section class="search-results"></section>
 
-	<section class="container" id="fancybox-container" class="iframe">
+	<section class="iframe" id="fancybox-container">
 		<div class="results"></div>
 		<div class="quote"></div>
 	</section>
