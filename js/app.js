@@ -3,35 +3,27 @@ var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
 
 var buttons = [
 	{
-		class: 'six-flags',
-		content: 'Six Flags'
-	},
-	{
-		class: 'ush',
+		class: '4a6cc0f0f964a52088d11fe3',
 		content: 'Universal Studios Hollywood'
 	},
 	{
-		class: 'hwof',
-		content: 'Hollywood Walk of Fame'
+		class: '4e86d78f82311e222fb40371',
+		content: 'Hollywood Walk of Fame (Strip)'
 	},
 	{
-		class: 'smb',
+		class: '49e27207f964a52016621fe3',
 		content: 'Santa Monica Beach'
 	},
 	{
-		class: 'lalive',
+		class: '4b098edff964a520651923e3',
 		content: 'LA Live'
 	},
 	{
-		class: 'knotts',
-		content: "Knott's Berry Farm"
-	},
-	{
-		class: 'disneyland',
+		class: '40f86c00f964a520bd0a1fe3',
 		content: 'Disneyland'
 	},
 	{
-		class: 'dca',
+		class: '45db8eb5f964a520fd421fe3',
 		content: 'Disney California Adventure'
 	}];
 
@@ -60,7 +52,7 @@ function getApiSearch(url, searchItem, location, callback) {
 		client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
 		query: searchItem,
 		near: location,
-		limit: 10,
+		limit: 6,
 		v: 20170401,
 		m: 'foursquare'
 	}
@@ -132,72 +124,10 @@ function searchResultDetails() {
 	})
 }
 
-function disneylandClick() {
-	$('.disneyland').click(function(e) {
+function presetDetails() {
+	$('.preset-buttons').on('click', 'button', function(e) {
 		e.preventDefault();
-		foursquareUrl += '40f86c00f964a520bd0a1fe3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function dcaClick() {
-	$('.dca').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '45db8eb5f964a520fd421fe3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function smbClick() {
-	$('.smb').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '49e27207f964a52016621fe3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function laLiveClick() {
-	$('.lalive').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '4b098edff964a520651923e3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function ushClick() {
-	$('.ush').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '4a6cc0f0f964a52088d11fe3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function hwofClick() {
-	$('.hwof').click(function(e) {
-		foursquareUrl += '4e86d78f82311e222fb40371';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function sixFlagsClick() {
-	$('.six-flags').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '4a179fb5f964a5206b791fe3';
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
-
-function knottsClick() {
-	$('.knotts').click(function(e) {
-		e.preventDefault();
-		foursquareUrl += '46d71bdef964a520724a1fe3';
+		foursquareUrl += this.className;
 		getApiData(foursquareUrl, displayApiData);
 		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 	})
@@ -205,14 +135,7 @@ function knottsClick() {
 
 $(function() {
 	displayButtons();
+	presetDetails();
 	searchSubmit();
 	searchResultDetails();
-	disneylandClick();
-	dcaClick();
-	smbClick();
-	laLiveClick();
-	ushClick();
-	hwofClick();
-	sixFlagsClick();
-	knottsClick();
 })
