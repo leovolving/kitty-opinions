@@ -1,4 +1,5 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
+var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
 
 var buttons = [
 	{
@@ -44,13 +45,43 @@ function displayButtons() {
 	$('.buttons').html(buttonsHTML);
 }
 
+function searchSubmit() {
+	$('.search-form').submit(function(e) {
+		e.preventDefault();
+		var searchItem = $('input[name=searchItem').val();
+		var location = $('input[name=searchLocation').val();
+		getApiSearch(foursquareSearchUrl, searchItem, location, displaySearchResults);
+	})
+}
+
+function getApiSearch(url, searchItem, location, callback) {
+	var query = {
+		client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
+		client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
+		query: searchItem,
+		near: location,
+		limit: 10,
+		v: 20170401,
+		m: 'foursquare'
+	}
+	$.getJSON(url, query, callback);
+}
+
+function displaySearchResults(data) {
+	console.log(data);
+	var searchResults = '';
+	data.response.venues.forEach(function(item) {
+		searchResults += '<button type="submit" class="' +
+		item.id + '" data-fancybox data-src="#fancybox-container">' +
+		item.name + '</button><br>';
+	})
+	$('.search-results').html(searchResults);
+}
+
 function getApiData(url, callback) {
 	var query = {
 		client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
 		client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
-		// venue_id: searchItem,
-		// group: 'venue',
-		// limit: 9,
 		v: 20170401,
 		m: 'foursquare'
 	}
@@ -80,11 +111,25 @@ function displayApiData(data) {
 	getQuotes(displayQuote); 
 	var results = '';
 	results += '<h2>' + venue.name + '</h2>';
-	venue.photos.groups[0].items.forEach(function(item) {
-		results += '<a href="' + item.prefix + '100x100' + item.suffix +
-		'" data-fancybox="images"><img src="' + item.prefix + '100x100' + item.suffix + '"></a> ';
-	})
+	if (venue.photos.groups[0]) {
+		venue.photos.groups[0].items.forEach(function(item) {
+			results += '<a href="' + item.prefix + '200x200' + item.suffix +
+			'" data-fancybox="images"><img src="' + item.prefix + '150x150' + item.suffix + '"></a> ';
+		})
+	}
+	else {
+		results += '<p>No photos :(</p>';
+	}
 	$('.results').html(results);
+}
+
+function searchResultDetails() {
+	$('.search-results').on('click', 'button', function(e) {
+		e.preventDefault();
+		foursquareUrl += this.className;
+		getApiData(foursquareUrl, displayApiData);
+		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
+	})
 }
 
 function disneylandClick() {
@@ -160,6 +205,8 @@ function knottsClick() {
 
 $(function() {
 	displayButtons();
+	searchSubmit();
+	searchResultDetails();
 	disneylandClick();
 	dcaClick();
 	smbClick();
