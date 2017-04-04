@@ -48,8 +48,8 @@ function displayButtons() {
 function searchSubmit() {
 	$('.search-form').submit(function(e) {
 		e.preventDefault();
-		var searchItem = $('input[name=searchItem').val();
-		var location = $('input[name=searchLocation').val();
+		var searchItem = $('input[name=searchItem]').val();
+		var location = $('input[name=searchLocation]').val();
 		getApiSearch(foursquareSearchUrl, searchItem, location, displaySearchResults);
 	})
 }
