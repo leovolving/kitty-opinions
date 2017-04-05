@@ -32,7 +32,7 @@ function displayButtons() {
 	buttons.forEach(function(item) {
 		buttonsHTML += '<button type="submit" class="' +
 		item.class + '" data-fancybox data-src="#fancybox-container">' +
-		item.content + '</button><br>'
+		item.content + '</button>'
 	})
 	$('.buttons').html(buttonsHTML);
 }
@@ -65,7 +65,7 @@ function displaySearchResults(data) {
 	data.response.venues.forEach(function(item) {
 		searchResults += '<button type="submit" class="' +
 		item.id + '" data-fancybox data-src="#fancybox-container">' +
-		item.name + '</button><br>';
+		item.name + '</button>';
 	})
 	$('.search-results').html(searchResults);
 }
@@ -92,7 +92,7 @@ function getQuotes(callback) {
 
 function displayQuote(data) {
 	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' +
-	'<a href="https://thecatapi.com" target="blank"><img src="https://thecatapi.com/api/images/get?format=src&type=gif"></a>' + 
+	'<a href="https://thecatapi.com" target="blank"><img src="https://thecatapi.com/api/images/get?format=src&type=gif"></a> ' + 
 	data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
