@@ -29,10 +29,18 @@ var buttons = [
 
 function displayButtons() {
 	var buttonsHTML = '';
+	var counter = 0;
 	buttons.forEach(function(item) {
-		buttonsHTML += '<button type="submit" class="' +
+		if (counter % 3 === 0) {
+			buttonsHTML += '<div class="row">'
+		}
+		buttonsHTML += '<div class="col-md-4"><button type="submit" class="' +
 		item.class + '" data-fancybox data-src="#fancybox-container">' +
-		item.content + '</button>'
+		item.content + '</button></div>'
+		if (counter % 3 === 2) {
+			buttonsHTML += '</div>'
+		}
+		counter++;
 	})
 	$('.buttons').html(buttonsHTML);
 }
@@ -62,10 +70,18 @@ function getApiSearch(url, searchItem, location, callback) {
 function displaySearchResults(data) {
 	console.log(data);
 	var searchResults = '';
+	var counter = 0;
 	data.response.venues.forEach(function(item) {
-		searchResults += '<button type="submit" class="' +
+		if (counter % 3 === 0) {
+			searchResults += '<div class="row">';
+		}
+		searchResults += '<div class="col-md-4"><button type="submit" class="' +
 		item.id + '" data-fancybox data-src="#fancybox-container">' +
-		item.name + '</button>';
+		item.name + '</button></div>';
+		if (counter % 3 === 2) {
+			searchResults += '</div>';
+		}
+		counter++;
 	})
 	$('.search-results').html(searchResults);
 }
