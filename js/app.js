@@ -71,19 +71,24 @@ function getApiSearch(url, searchItem, location, callback) {
 function displaySearchResults(data) {
 	console.log(data);
 	var searchResults = '';
-	var counter = 0;
-	data.response.venues.forEach(function(item) {
-		if (counter % 3 === 0) {
-			searchResults += '<div class="row">';
-		}
-		searchResults += '<div class="col-md-4"><button type="submit" class="' +
-		item.id + '" data-fancybox data-src="#fancybox-container">' +
-		item.name + '</button></div>';
-		if (counter % 3 === 2) {
-			searchResults += '</div>';
-		}
-		counter++;
-	})
+	if (data.response.venues.length !== 0) {
+		var counter = 0;
+		data.response.venues.forEach(function(item) {
+			if (counter % 3 === 0) {
+				searchResults += '<div class="row">';
+			}
+			searchResults += '<div class="col-md-4"><button type="submit" class="' +
+			item.id + '" data-fancybox data-src="#fancybox-container">' +
+			item.name + '</button></div>';
+			if (counter % 3 === 2) {
+				searchResults += '</div>';
+			}
+			counter++;
+		})
+	}
+	else {
+		searchResults += '<p id="search-fail">No results. Check your spelling, human. -_-</p>';
+	}
 	$('.search-results').html(searchResults);
 }
 
@@ -124,14 +129,12 @@ function getCatImage(callback) {
 }
 
 function catImageMaker(text) {
-	console.log(text);
 	image = text;
 	getQuotes(displayQuote); 
 	return text;
 }
 
 function displayQuote(data) {
-	console.log(image);
 	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + image + 
 	' ' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);

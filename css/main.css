@@ -15,6 +15,12 @@ form {
 	margin-right: auto;
 }
 
+#search-fail {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
 ul {
 	float: left;
 }
