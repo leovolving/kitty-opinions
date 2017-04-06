@@ -125,8 +125,8 @@ function getCatImage(callback) {
 
 function catImageMaker(text) {
 	console.log(text);
-	getQuotes(displayQuote); 
 	image = text;
+	getQuotes(displayQuote); 
 	return text;
 }
 
