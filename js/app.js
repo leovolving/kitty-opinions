@@ -1,5 +1,6 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
+var image = '';
 
 var buttons = [
 	{
@@ -106,10 +107,31 @@ function getQuotes(callback) {
 	$.ajax(query);
 }
 
+function getCatImage(callback) {
+
+	var query = {
+		url: "https://thecatapi.com/api/images/get?format=html&type=gif",
+		dataType: 'html',
+		success: callback,
+		error: function(text) {
+			image = text.responseText;
+			console.log(image);
+			return image;
+			}
+		}
+	$.ajax(query);
+}
+
+function catImageMaker(text) {
+	console.log(text);
+	return text;
+}
+
 function displayQuote(data) {
-	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' +
-	'<a href="https://thecatapi.com" target="blank"><img src="https://thecatapi.com/api/images/get?format=src&type=gif"></a> ' + 
-	data[0] + '</p>';
+	image = getCatImage(catImageMaker);
+	console.log(image);
+	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + image + 
+	' ' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
 
