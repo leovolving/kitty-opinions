@@ -88,6 +88,8 @@ function displaySearchResults(data) {
 }
 
 function getApiData(url, callback) {
+	$('.results').empty();
+	$('.quote').empty();
 	var query = {
 		client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
 		client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
@@ -108,7 +110,6 @@ function getQuotes(callback) {
 }
 
 function getCatImage(callback) {
-
 	var query = {
 		url: "https://thecatapi.com/api/images/get?format=html&type=gif",
 		dataType: 'html',
@@ -124,11 +125,12 @@ function getCatImage(callback) {
 
 function catImageMaker(text) {
 	console.log(text);
+	getQuotes(displayQuote); 
+	image = text;
 	return text;
 }
 
 function displayQuote(data) {
-	image = getCatImage(catImageMaker);
 	console.log(image);
 	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + image + 
 	' ' + data[0] + '</p>';
@@ -138,7 +140,6 @@ function displayQuote(data) {
 function displayApiData(data) {
 	console.log(data.response);
 	var venue = data.response.venue;
-	getQuotes(displayQuote); 
 	var results = '';
 	results += '<h2>' + venue.name + '</h2>';
 	if (venue.photos.groups[0]) {
@@ -156,6 +157,7 @@ function displayApiData(data) {
 function searchResultDetails() {
 	$('.search-results').on('click', 'button', function(e) {
 		e.preventDefault();
+		image = getCatImage(catImageMaker);	
 		foursquareUrl += this.className;
 		getApiData(foursquareUrl, displayApiData);
 		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
@@ -165,6 +167,7 @@ function searchResultDetails() {
 function presetDetails() {
 	$('.preset-buttons').on('click', 'button', function(e) {
 		e.preventDefault();
+		image = getCatImage(catImageMaker);
 		foursquareUrl += this.className;
 		getApiData(foursquareUrl, displayApiData);
 		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
