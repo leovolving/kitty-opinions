@@ -15,10 +15,16 @@ form {
 	margin-right: auto;
 }
 
+.preset-buttons, .buttons,
+ .search-results {
+	margin-top: 50px;
+}
+
 #search-fail {
 	text-align: center;
 	font-weight: bold;
 	color: red;
+	font-size: 1.2em;
 }
 
 ul {
