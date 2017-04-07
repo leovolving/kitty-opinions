@@ -1,12 +1,23 @@
-
-.quote img {
-	width: 50px;
-	height: 50px;
+body {
+	background-color: #C2C5BB;
 }
 
-header {
+.quote img {
+	width: 100px;
+	height: auto;
+	float: left;
+	margin-right: 10px;
+}
+
+header, button {
 	background-color: #0A8754;
 	color: white;
+}
+
+button:hover {
+	background-color: white;
+	color: #0A8754;
+	cursor: pointer;
 }
 
 header img {
@@ -31,6 +42,15 @@ form {
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
+}
+
+#fancybox-container {
+	max-width: 500px;
+	background-color: #639A88;
+}
+
+.results img {
+	padding: 10px;
 }
 
 #search-fail {
