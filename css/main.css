@@ -17,6 +17,7 @@ header, button {
 button:hover {
 	background-color: white;
 	color: #0A8754;
+	font-weight: bold;
 	cursor: pointer;
 }
 
@@ -46,6 +47,15 @@ form {
 
 fieldset {
 	color: white;
+}
+
+form button {
+	background-color: white;
+	color: #0A8754;
+}
+
+form button:hover {
+	font-weight: bold;
 }
 
 .preset-buttons, .buttons,
