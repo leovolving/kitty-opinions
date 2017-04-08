@@ -75,6 +75,7 @@ form button {
 
 form button:focus, form button:hover {
 	background-color: #C2C5BB;
+	outline: none;
 }
 
 input {
