@@ -105,6 +105,10 @@ input {
 	margin-bottom: 10px;
 }
 
+.quote h3 {
+	margin: 10px 0;
+}
+
 .quote img {
 	width: 200px;
 	height: auto;
