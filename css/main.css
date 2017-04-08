@@ -8,13 +8,6 @@ h1 {
 	margin-bottom: 15px;
 }
 
-.quote img {
-	width: 100px;
-	height: auto;
-	float: left;
-	margin-right: 10px;
-}
-
 header {
 	padding-top: 10px;
 }
@@ -99,16 +92,24 @@ input {
 	max-width: 500px;
 }
 
+.quote img {
+	width: 100px;
+	height: auto;
+	float: left;
+	margin-right: 10px;
+}
+
 #search-fail {
 	position: relative;
-	top: 300px;
+	top: 200px;
 	text-align: center;
 	font-weight: bold;
 	color: red;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 #search-fail-image {
+	width: 100%;
 	margin-top: -50px;
 	display: block;
 	margin-left: auto;
@@ -147,5 +148,14 @@ footer p {
 
 	#search-fail {
 		font-size: 1.2em;
+	}
+
+	#search-fail-image {
+		max-width: 500px;
+	}
+
+	#search-fail {
+	position: relative;
+	top: 300px;
 	}
 }
