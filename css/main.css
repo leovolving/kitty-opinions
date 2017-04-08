@@ -17,7 +17,8 @@ header, button {
 	color: white;
 }
 
-button:focus, button:hover {
+.preset-buttons button:focus, .preset-buttons button:hover, 
+.search-results button:focus, .search-results button:hover {
 	background-color: white;
 	color: #0A8754;
 	cursor: pointer;
@@ -84,8 +85,13 @@ input {
 	background-color: #639A88;
 }
 
+#fancybox-container button:focus,
+#fancybox-container a:focus, {
+	outline-color: #0A8754;
+}
+
 .results img {
-	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .quote {
