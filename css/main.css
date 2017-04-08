@@ -1,5 +1,10 @@
 body {
 	background-color: #C2C5BB;
+	font-family: 'Roboto Mono';
+}
+
+h1 {
+	font-family: 'Indie Flower';
 }
 
 .quote img {
