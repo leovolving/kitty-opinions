@@ -13,7 +13,6 @@ If you can't decide on a location to search, there are 6 preloaded "popular loca
 	<a href="https://jquery.com/">jQuery</a>, 
 	<a href="http://getbootstrap.com/">BootStrap</a>, 
 	<a href="http://fancybox.net/">Fancybox</a> <br>
-
 <b>APIs</b> - 
 	<a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a>, 
 	<a href="https://thecatapi.com/" target="blank" rel="noopener noreferrer">The Cat API</a>, 
