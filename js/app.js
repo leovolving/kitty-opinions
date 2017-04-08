@@ -136,7 +136,7 @@ function catImageMaker(text) {
 }
 
 function displayQuote(data) {
-	var quoteHTML = '<h3>User Tips/Reviews</h3><p>' + image + 
+	var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image + 
 	' ' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 }
