@@ -9,6 +9,10 @@ body {
 	margin-right: 10px;
 }
 
+header {
+	padding-top: 10px;
+}
+
 header, button {
 	background-color: #0A8754;
 	color: white;
@@ -18,6 +22,7 @@ button:focus, button:hover {
 	background-color: white;
 	color: #0A8754;
 	cursor: pointer;
+	outline: none;
 }
 
 header img {
@@ -44,23 +49,31 @@ form {
 }
 
 fieldset {
+	font-size: 1.2em;
 	color: white;
 	margin: 0 10px;
+}
+
+label {
+	border-bottom: 1px solid white;
 }
 
 form button {
 	background-color: white;
 	color: #0A8754;
 	width: 33.3%;
-	margin-left: auto;
+	margin-left: 30%;
 	margin-right: auto;
+	margin-bottom: 10px;
 }
 
 form button:focus, form button:hover {
-	outline: none;
+	/*outline: none;*/
+	background-color: #C2C5BB;
 }
 
 input {
+	background-color: #C2C5BB;
 	margin-bottom: 10px;
 }
 
@@ -87,7 +100,7 @@ input {
 	text-align: center;
 	font-weight: bold;
 	color: red;
-	font-size: 1.2em;
+	font-size: 0.9em;
 }
 
 #search-fail-image {
@@ -97,8 +110,15 @@ input {
 	margin-right: auto;
 }
 
-a#search-fail-image {
-	padding: 0;
+footer a {
+	color: black;
+	text-decoration: underline;
+}
+
+footer a:hover, footer a:focus {
+	color: #0A8754;
+	outline-color: #0A8754;
+	text-decoration: none;
 }
 
 ul {
@@ -118,5 +138,9 @@ footer p {
 	fieldset {
 		width: 50%;
 		margin: 0 auto;
+	}
+
+	#search-fail {
+		font-size: 1.2em;
 	}
 }
