@@ -145,9 +145,15 @@ function displayApiData(data) {
 	console.log(data.response);
 	var venue = data.response.venue;
 	var results = '';
-	results += '<h2>' + venue.name + '</h2>' +
-	'<p>' + venue.location.address + ', ' + venue.location.city +
-	', ' + venue.location.country + '</p>';
+	results += '<h2>' + venue.name + '</h2><p>';
+	if (venue.location.address === undefined) {
+		results += 'undefined address';
+	}
+	else {
+		results += venue.location.address;
+	}
+	results +=	', ' + venue.location.city +
+		', ' + venue.location.country + '</p>';
 	if (venue.photos.groups[0]) {
 		venue.photos.groups[0].items.forEach(function(item) {
 			results += '<a href="' + item.prefix + '200x200' + item.suffix +
