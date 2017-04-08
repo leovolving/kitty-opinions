@@ -175,8 +175,8 @@ function displayApiData(data) {
 	$('.results').html(results);
 	}
 
-function searchResultDetails() {
-	$('.search-results').on('click', 'button', function(e) {
+function apiButtonDetails() {
+	$('.js-buttons').on('click', 'button', function(e) {
 		e.preventDefault();
 		image = getCatImage(catImageMaker);	
 		//gets location ID which is needed to get API data
@@ -186,20 +186,8 @@ function searchResultDetails() {
 		})
 	}
 
-function presetDetails() {
-	$('.preset-buttons').on('click', 'button', function(e) {
-		e.preventDefault();
-		image = getCatImage(catImageMaker);
-		//gets location ID which is needed to get API data
-		foursquareUrl += this.className;
-		getApiData(foursquareUrl, displayApiData);
-		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-		})
-	}
-
 $(function() {
 	displayButtons();
-	presetDetails();
 	searchSubmit();
-	searchResultDetails();
+	apiButtonDetails();
 	})
