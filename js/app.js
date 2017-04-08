@@ -2,6 +2,7 @@ var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
 var image = '';
 
+//data for preset buttons
 var buttons = [
 	{
 		class: '4a6cc0f0f964a52088d11fe3',
@@ -30,21 +31,24 @@ var buttons = [
 
 function displayButtons() {
 	var buttonsHTML = '';
+	//counter to monitor placesment of row div's
 	var counter = 0;
 	buttons.forEach(function(item) {
+		//adds new row div for every 3rd item
 		if (counter % 3 === 0) {
 			buttonsHTML += '<div class="row">'
 		}
 		buttonsHTML += '<div class="col-md-4"><button type="submit" class="' +
 		item.class + '" data-fancybox data-src="#fancybox-container">' +
 		item.content + '</button></div>'
+		//closes row div tag at before every 3rd row
 		if (counter % 3 === 2) {
 			buttonsHTML += '</div>'
 		}
 		counter++;
 	})
 	$('.buttons').html(buttonsHTML);
-}
+	}
 
 function searchSubmit() {
 	$('.search-form').submit(function(e) {
@@ -53,7 +57,7 @@ function searchSubmit() {
 		var location = $('input[name=searchLocation]').val();
 		getApiSearch(foursquareSearchUrl, searchItem, location, displaySearchResults);
 	})
-}
+	}
 
 function getApiSearch(url, searchItem, location, callback) {
 	var query = {
@@ -64,34 +68,37 @@ function getApiSearch(url, searchItem, location, callback) {
 		limit: 6,
 		v: 20170401,
 		m: 'foursquare'
-	}
+		}
 	$.getJSON(url, query, callback);
-}
+	}
 
 function displaySearchResults(data) {
-	console.log(data);
 	var searchResults = '';
+	//runs only if search yielded results
 	if (data.response.venues.length !== 0) {
 		var counter = 0;
 		data.response.venues.forEach(function(item) {
+			//adds row div to every 3rd item
 			if (counter % 3 === 0) {
 				searchResults += '<div class="row">';
-			}
+				}
 			searchResults += '<div class="col-md-4"><button type="submit" class="' +
 			item.id + '" data-fancybox data-src="#fancybox-container">' +
 			item.name + '</button></div>';
+			//adds closing row div before every third item
 			if (counter % 3 === 2) {
 				searchResults += '</div>';
-			}
+				}
 			counter++;
-		})
-	}
+			})
+		}
+	//runs if search yielded no results
 	else {
 		searchResults += '<p id="search-fail">No results. Check your spelling, human.</p>' +
 		'<a href="http://thecatapi.com/?id=75a" target="blank"><img id="search-fail-image" src="http://thecatapi.com/api/images/get?id=75a"></a>';
-	}
+		}
 	$('.search-results').html(searchResults).hide().slideDown('3s');
-}
+	}
 
 function getApiData(url, callback) {
 	$('.results').empty();
@@ -101,9 +108,9 @@ function getApiData(url, callback) {
 		client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
 		v: 20170401,
 		m: 'foursquare'
-	}
+		}
 	$.getJSON(url, query, callback)
-}
+	}
 
 function getQuotes(callback) {
 	var query = {
@@ -113,7 +120,7 @@ function getQuotes(callback) {
 	    success: callback
 		}
 	$.ajax(query);
-}
+	}
 
 function getCatImage(callback) {
 	var query = {
@@ -122,73 +129,77 @@ function getCatImage(callback) {
 		success: callback,
 		error: function(text) {
 			image = text.responseText;
-			console.log(image);
 			return image;
 			}
 		}
 	$.ajax(query);
-}
+	}
 
 function catImageMaker(text) {
 	image = text;
+	//call for Ron Swanson quote here due to lag in Cat API
 	getQuotes(displayQuote); 
 	return text;
-}
+	}
 
 function displayQuote(data) {
 	var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image + 
 	' ' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);
-}
+	}
 
 function displayApiData(data) {
-	console.log(data.response);
 	var venue = data.response.venue;
 	var results = '';
 	results += '<h2>' + venue.name + '</h2><p>';
+	//adds text 'undefined address' if location doesn't have address
 	if (venue.location.address === undefined) {
 		results += 'undefined address';
-	}
+		}
 	else {
 		results += venue.location.address;
-	}
+		}
 	results +=	', ' + venue.location.city +
 		', ' + venue.location.country + '</p>';
+	//runs if location has photos	
 	if (venue.photos.groups[0]) {
 		venue.photos.groups[0].items.forEach(function(item) {
 			results += '<a href="' + item.prefix + '200x200' + item.suffix +
 			'" data-fancybox="images"><img src="' + item.prefix + '150x150' + item.suffix + '"></a> ';
 		})
-	}
+		}
+	//runs if location had no photos	
 	else {
 		results += '<p>No photos :(</p>';
-	}
+		}
 	$('.results').html(results);
-}
+	}
 
 function searchResultDetails() {
 	$('.search-results').on('click', 'button', function(e) {
 		e.preventDefault();
 		image = getCatImage(catImageMaker);	
+		//gets location ID which is needed to get API data
 		foursquareUrl += this.className;
 		getApiData(foursquareUrl, displayApiData);
 		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
+		})
+	}
 
 function presetDetails() {
 	$('.preset-buttons').on('click', 'button', function(e) {
 		e.preventDefault();
 		image = getCatImage(catImageMaker);
+		//gets location ID which is needed to get API data
 		foursquareUrl += this.className;
 		getApiData(foursquareUrl, displayApiData);
 		foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-	})
-}
+		})
+	}
 
 $(function() {
 	displayButtons();
 	presetDetails();
 	searchSubmit();
 	searchResultDetails();
-})
+	})
