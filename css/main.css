@@ -1,21 +1,21 @@
 body {
 	background-color: #C2C5BB;
 	font-family: 'Roboto Mono';
-}
+	}
 
 h1 {
 	font-family: 'Indie Flower';
 	margin-bottom: 15px;
-}
+	}
 
 header {
 	padding-top: 10px;
-}
+	}
 
 header, button {
 	background-color: #0A8754;
 	color: white;
-}
+	}
 
 .preset-buttons button:focus, .preset-buttons button:hover, 
 .search-results button:focus, .search-results button:hover {
@@ -23,7 +23,7 @@ header, button {
 	color: #0A8754;
 	cursor: pointer;
 	outline: none;
-}
+	}
 
 header img {
 	display: inline-block;
@@ -31,39 +31,39 @@ header img {
 	max-height: 90px;
 	width: auto;
 	border-radius: 5%;
-}
+	}
 
 .preset-buttons button,
 .search-results button {
 	margin: 0 20px 50px 20px;
-}
+	}
 
 .form {
 	background-color: #0A8754;
 	text-align: center;
-}
+	}
 
 form {
 	margin-bottom: 50px;
 	margin-left: auto;
 	margin-right: auto;
-}
+	}
 
 fieldset {
 	font-size: 1.2em;
 	color: white;
 	margin: 0 10px;
 	text-align: left;
-}
+	}
 
 label {
 	border-bottom: 1px solid white;
-}
+	}
 
 label[for=search] {
 	font-size: 1.2em;
 	color: white;
-}
+	}
 
 form button {
 	background-color: white;
@@ -71,43 +71,43 @@ form button {
 	width: 33.3%;
 	margin-right: auto;
 	margin-bottom: 10px;
-}
+	}
 
 form button:focus, form button:hover {
 	background-color: #C2C5BB;
 	outline: none;
-}
+	}
 
 input {
 	background-color: #C2C5BB;
 	margin-bottom: 10px;
-}
+	}
 
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
-}
+	}
 
 #fancybox-container {
 	background-color: #639A88;
-}
+	}
 
 .iframe button {
 	float: right;
-}
+	}
 
 .iframe button:focus,
 .iframe a:focus {
 	outline-color: #0A8754;
-}
+	}
 
 .results img {
 	margin-bottom: 10px;
-}
+	}
 
 .quote h3 {
 	margin: 10px 0;
-}
+	}
 
 .quote img {
 	width: 200px;
@@ -115,7 +115,7 @@ input {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-}
+	}
 
 #search-fail {
 	position: relative;
@@ -124,7 +124,7 @@ input {
 	font-weight: bold;
 	color: red;
 	font-size: 0.8em;
-}
+	}
 
 #search-fail-image {
 	width: 100%;
@@ -132,62 +132,62 @@ input {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-}
+	}
 
 footer a {
 	color: black;
 	text-decoration: underline;
-}
+	}
 
 footer a:hover, footer a:focus {
 	color: #0A8754;
 	outline-color: #0A8754;
 	text-decoration: none;
-}
+	}
 
 ul {
 	float: left;
-}
+	}
 
 li {
 	display: inline;
 	list-style-type: none;
-}
+	}
 
 footer p {
 	float: right;
-}
+	}
 
 @media only screen and (min-width: 640px) {
 	fieldset {
 		width: 50%;
 		margin: 0 auto;
-	}
+		}
 
 	form button {
 		width: 15%;
-	}
+		}
 
 	#search-fail {
 		font-size: 1.2em;
-	}
+		}
 
 	#search-fail-image {
 		max-width: 500px;
-	}
+		}
 
 	#search-fail {
 	position: relative;
 	top: 300px;
-	}
+		}
 
 	.quote {
 		max-width: 800px;
-	}
+		}
 
 	.quote img {
 		display: inline;
 		float: left;
 		margin-right: 10px;
+		}
 	}
-}
