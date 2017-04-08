@@ -90,7 +90,7 @@ function displaySearchResults(data) {
 		searchResults += '<p id="search-fail">No results. Check your spelling, human. -_-</p>' +
 		'<a href="http://thecatapi.com/?id=75a" target="blank"><img id="search-fail-image" src="http://thecatapi.com/api/images/get?id=75a"></a>';
 	}
-	$('.search-results').html(searchResults);
+	$('.search-results').html(searchResults).hide().slideDown('3s');
 }
 
 function getApiData(url, callback) {
