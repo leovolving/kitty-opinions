@@ -12,10 +12,6 @@ header {
 	padding-top: 10px;
 }
 
-label[for=search] {
-	text-align: center;
-}
-
 header, button {
 	background-color: #0A8754;
 	color: white;
@@ -44,6 +40,7 @@ header img {
 
 .form {
 	background-color: #0A8754;
+	text-align: center;
 }
 
 form {
@@ -56,17 +53,22 @@ fieldset {
 	font-size: 1.2em;
 	color: white;
 	margin: 0 10px;
+	text-align: left;
 }
 
 label {
 	border-bottom: 1px solid white;
 }
 
+label[for=search] {
+	font-size: 1.2em;
+	color: white;
+}
+
 form button {
 	background-color: white;
 	color: #0A8754;
 	width: 33.3%;
-	margin-left: 30%;
 	margin-right: auto;
 	margin-bottom: 10px;
 }
@@ -155,6 +157,10 @@ footer p {
 	fieldset {
 		width: 50%;
 		margin: 0 auto;
+	}
+
+	form button {
+		width: 15%;
 	}
 
 	#search-fail {

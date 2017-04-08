@@ -24,12 +24,14 @@
 
 <section class="form">
 	<form class="search-form">
+		<label for="search">Search the globe.</label><br>
 		<fieldset class="form-group">
-		<label for="search">Search for a place.</label>
-			<input type="text" class="form-control" name="searchItem" placeholder="place">
-			<input type="text" class="form-control" name="searchLocation" placeholder="location">
-			<button type="submit" class="searchSubmit">Submit</button>
+		<label for="searchItem">Place</label>
+			<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="ex. donuts, park, hospitals" required>
+		<label for="searchLocation">Location</label>
+			<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
 		</fieldset>
+		<button type="submit" class="searchSubmit">Submit</button>
 	</form>
 </section>
 
