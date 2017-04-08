@@ -17,7 +17,6 @@ header, button {
 button:focus, button:hover {
 	background-color: white;
 	color: #0A8754;
-	font-weight: bold;
 	cursor: pointer;
 }
 
@@ -40,23 +39,29 @@ header img {
 
 form {
 	margin-bottom: 50px;
-	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 fieldset {
 	color: white;
+	margin: 0 10px;
 }
 
 form button {
 	background-color: white;
 	color: #0A8754;
+	width: 33.3%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 form button:focus, form button:hover {
-	font-weight: bold;
 	outline: none;
+}
+
+input {
+	margin-bottom: 10px;
 }
 
 .preset-buttons, .buttons,
@@ -107,4 +112,11 @@ li {
 
 footer p {
 	float: right;
+}
+
+@media only screen and (min-width: 640px) {
+	fieldset {
+		width: 50%;
+		margin: 0 auto;
+	}
 }

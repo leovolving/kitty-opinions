@@ -21,23 +21,24 @@
 </header>
 <main>
 
-	<section class="preset-buttons container">
-		<h2>Can't decide? Choose a popular location...</h2>
-		<div class="buttons"></div>
-	</section>
-
 <section class="form">
 	<form class="search-form">
-		<fieldset class=search>
-		<label for="search">Made up your mind? Search for a place.</label><br>
-			<input type="text" name="searchItem" placeholder="place">
-			<input type="text" name="searchLocation" placeholder="location">
+		<fieldset class="form-group">
+		<label for="search">Search for a place.</label>
+			<input type="text" class="form-control" name="searchItem" placeholder="place">
+			<input type="text" class="form-control" name="searchLocation" placeholder="location">
 			<button type="submit" class="searchSubmit">Submit</button>
 		</fieldset>
 	</form>
 </section>
 
 	<section class="search-results container"></section>
+
+		<section class="preset-buttons container">
+		<h2>Can't decide? Choose a popular location...</h2>
+		<div class="buttons"></div>
+	</section>
+
 
 	<section class="iframe" id="fancybox-container">
 		<div class="results"></div>
