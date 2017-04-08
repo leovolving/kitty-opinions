@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Kitty Opinions</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Mono" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-</head>
-<body>
+	<head>
+		<title>Kitty Opinions</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Search the foursquare database for locations; get a Ron Swanson quote and cat GIF regarding that location. For entertainment purposes only.">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Mono" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+	<body>
 
-<header>
-	<div class="container">
-	<div class="row">
-	<div class="col-md-12">
-	<img src="img/rajah.PNG">
-	<h1>Kitty Opinions</h1>
-	<p>Hello, human. See the world through the eyes of fury friends who have spent way too much time in Pawnee, Indiana.</p>
-	</div></div>
-</header>
-<main>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<img src="img/rajah.PNG">
+						<h1>Kitty Opinions</h1>
+						<p>Hello, human. See the world through the eyes of fury friends who have spent way too much time in Pawnee, Indiana.</p>
+						</div></div></div>
+			</header>
+		<main>
 
-<section class="form">
-	<form class="search-form">
-		<label for="search">Search the globe.</label><br>
-		<fieldset class="form-group">
-		<label for="searchItem">Place</label>
-			<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="ex. donuts, park, hospitals" required>
-		<label for="searchLocation">Location</label>
-			<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
-		</fieldset>
-		<button type="submit" class="searchSubmit">Submit</button>
-	</form>
-</section>
+		<section class="form">
+			<form class="search-form">
+				<label for="search">Search the globe.</label><br>
+				<fieldset class="form-group">
+				<label for="searchItem">Place</label>
+					<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="ex. donuts, park, hospitals" required>
+				<label for="searchLocation">Location</label>
+					<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
+				</fieldset>
+				<button type="submit" class="searchSubmit">Submit</button>
+			</form>
+		</section>
 
-	<section class="search-results container"></section>
+			<section class="search-results container"></section>
 
-		<section class="preset-buttons container">
-		<h2>Can't decide? Choose a popular location...</h2>
-		<div class="buttons"></div>
-	</section>
+				<section class="preset-buttons container">
+					<h2>Can't decide? Choose a popular location...</h2>
+					<div class="buttons"></div>
+			</section>
 
 
-	<section class="iframe" id="fancybox-container">
-		<div class="results"></div>
-		<div class="quote"></div>
-	</section>
-</main>
+			<section class="iframe" id="fancybox-container">
+				<div class="results"></div>
+				<div class="quote"></div>
+			</section>
+		</main>
 
-<footer>
-	<div class="container">
-	<div class="row">
-	<div class="col-md-12">
-	<ul>Sources:
-		<li><a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a> |</li>
-		<li><a href="https://thecatapi.com/" target="blank" rel="noopener noreferrer">The Cat API</a> |</li>
-		<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
-	</ul>
-	<p>Made by <a href="https://twitter.com/Ljyockey" target="blank" rel="noopener noreferrer">L.J. Yockey</a>.</p>
-	</div></div></div>
-</footer>
+		<footer>
+			<div class="container">
+				<div class="row">
+				<div class="col-md-12">
+					<ul>Sources:
+						<li><a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a> |</li>
+						<li><a href="https://thecatapi.com/" target="blank" rel="noopener noreferrer">The Cat API</a> |</li>
+						<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
+					</ul>
+					<p>Made by <a href="https://twitter.com/Ljyockey" target="blank" rel="noopener noreferrer">L.J. Yockey</a>.</p>
+					</div></div></div>
+		</footer>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-</body>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
 </html>
