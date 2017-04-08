@@ -12,6 +12,10 @@ header {
 	padding-top: 10px;
 }
 
+label[for=search] {
+	text-align: center;
+}
+
 header, button {
 	background-color: #0A8754;
 	color: white;
@@ -85,8 +89,12 @@ input {
 	background-color: #639A88;
 }
 
-#fancybox-container button:focus,
-#fancybox-container a:focus, {
+.iframe button {
+	float: right;
+}
+
+.iframe button:focus,
+.iframe a:focus {
 	outline-color: #0A8754;
 }
 
@@ -94,15 +102,12 @@ input {
 	margin-bottom: 10px;
 }
 
-.quote {
-	max-width: 500px;
-}
-
 .quote img {
-	width: 100px;
+	width: 200px;
 	height: auto;
-	float: left;
-	margin-right: 10px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #search-fail {
@@ -163,5 +168,15 @@ footer p {
 	#search-fail {
 	position: relative;
 	top: 300px;
+	}
+
+	.quote {
+		max-width: 800px;
+	}
+
+	.quote img {
+		display: inline;
+		float: left;
+		margin-right: 10px;
 	}
 }
