@@ -17,6 +17,18 @@ header, button {
 	color: white;
 	}
 
+header button {
+	float: right;
+}	
+
+button, input {
+	font-family: 'Roboto Mono';
+}
+
+#fancybox-about-container p {
+	max-width: 600px;
+}
+
 .preset-buttons button:focus, .preset-buttons button:hover, 
 .search-results button:focus, .search-results button:hover {
 	background-color: white;
@@ -45,8 +57,10 @@ header img {
 
 form {
 	margin-bottom: 50px;
+	padding-bottom: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 50px;
 	}
 
 fieldset {
@@ -76,6 +90,7 @@ form button {
 form button:focus, form button:hover {
 	background-color: #C2C5BB;
 	outline: none;
+	cursor: pointer;
 	}
 
 input {
@@ -83,12 +98,23 @@ input {
 	margin-bottom: 10px;
 	}
 
+button.more-info {
+	background-color: white;
+	color: #0A8754;
+	}
+
+button.more-info:hover, button.more-info:focus {
+	background-color: #C2C5BB;
+	outline: none;
+	cursor: pointer;
+	}
+
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
 	}
 
-#fancybox-container {
+.iframe {
 	background-color: #639A88;
 	}
 
@@ -159,6 +185,10 @@ footer p {
 	}
 
 @media only screen and (min-width: 640px) {
+	form {
+		margin-top: 0;
+	}
+
 	fieldset {
 		width: 50%;
 		margin: 0 auto;
@@ -166,6 +196,14 @@ footer p {
 
 	form button {
 		width: 15%;
+		}
+	#fancybox-about-container p {
+		max-width: 600px;
+		}
+
+		iframe {
+			width: 560px; 
+			height: 315px; 
 		}
 
 	#search-fail {
