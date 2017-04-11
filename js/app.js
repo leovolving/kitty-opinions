@@ -50,6 +50,18 @@ function displayButtons() {
 	$('.buttons').html(buttonsHTML);
 	}
 
+function getMoreInfo() {
+	$('header').on('click', '.more-info', function(e) {	
+		e.preventDefault();
+		var info = '<p>Search for any location within Foursquare and get the top 6 results. ' + 
+					'Click on a location for more info as well as a "tip/review", ' +
+					'which contains a Cat GIF and a Ron Swanson quote.</p>' +
+					'<p>This app is for entertainment purposes only. Don\'t know Ron Swanson? Check out this video:</p>' +
+					'<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>';
+		$('#fancybox-about-container').html(info);
+		});
+	}
+
 function searchSubmit() {
 	$('.search-form').submit(function(e) {
 		e.preventDefault();
@@ -188,6 +200,7 @@ function apiButtonDetails() {
 
 $(function() {
 	displayButtons();
+	getMoreInfo();
 	searchSubmit();
 	apiButtonDetails();
 	})
