@@ -163,7 +163,7 @@ function displayQuote(data) {
 	}
 
 function displayApiData(data) {
-	var venue = data.response.venue;
+	venue = data.response.venue;
 	var results = '';
 	results += '<h2>' + venue.name + '</h2><p>';
 	//adds text 'undefined address' if location doesn't have address
