@@ -1,6 +1,7 @@
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
 var image = '';
+var venue;
 
 //data for preset buttons
 var buttons = [
@@ -157,6 +158,7 @@ function catImageMaker(text) {
 function displayQuote(data) {
 	var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image + 
 	' ' + data[0] + '</p>';
+	console.log(venue);
 	$('.quote').html(quoteHTML);
 	}
 
@@ -185,6 +187,7 @@ function displayApiData(data) {
 		results += '<p>No photos :(</p>';
 		}
 	$('.results').html(results);
+	console.log($('.quote').html());
 	}
 
 function apiButtonDetails() {
