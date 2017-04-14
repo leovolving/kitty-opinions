@@ -10,24 +10,12 @@ var buttons = [
 		content: 'Universal Studios Hollywood'
 	},
 	{
-		class: '4e86d78f82311e222fb40371',
-		content: 'Hollywood Walk of Fame (Strip)'
-	},
-	{
-		class: '49e27207f964a52016621fe3',
-		content: 'Santa Monica Beach'
-	},
-	{
-		class: '4b098edff964a520651923e3',
-		content: 'LA Live'
-	},
-	{
 		class: '40f86c00f964a520bd0a1fe3',
 		content: 'Disneyland'
 	},
 	{
-		class: '45db8eb5f964a520fd421fe3',
-		content: 'Disney California Adventure'
+		class: '49e27207f964a52016621fe3',
+		content: 'Santa Monica Beach'
 	}];
 
 function displayButtons() {
@@ -56,7 +44,7 @@ function getMoreInfo() {
 		e.preventDefault();
 		var info = '<p>Search for any location within Foursquare and get the top 6 results. ' + 
 					'Click on a location for more info as well as a "tip/review", ' +
-					'which contains a Cat GIF and a Ron Swanson quote.</p>' +
+					'which contain\'s the location\'s Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>' +
 					'<p>This app is for entertainment purposes only. Don\'t know Ron Swanson? Check out this video:</p>' +
 					'<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>';
 		$('#fancybox-about-container').html(info);
@@ -156,9 +144,16 @@ function catImageMaker(text) {
 	}
 
 function displayQuote(data) {
-	var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image + 
-	' ' + data[0] + '</p>';
-	console.log(venue);
+	var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image +
+	venue.name + ' has ';
+	if (venue.rating) {
+		quoteHTML += 'a rating of ' + venue.rating +
+		'/10 - Whatever.';
+	}
+	else {
+		quoteHTML += 'not been rated. Figures.';
+	}
+	quoteHTML += ' ' + data[0] + '</p>';
 	$('.quote').html(quoteHTML);
 	}
 
