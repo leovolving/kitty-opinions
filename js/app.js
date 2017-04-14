@@ -182,7 +182,6 @@ function displayApiData(data) {
 		results += '<p>No photos :(</p>';
 		}
 	$('.results').html(results);
-	console.log($('.quote').html());
 	}
 
 function apiButtonDetails() {
