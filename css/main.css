@@ -1,6 +1,5 @@
 body {
-	background-color: #C2C5BB;
-	font-family: 'Roboto Mono';
+	font-family: 'Roboto';
 	}
 
 h1 {
@@ -9,7 +8,7 @@ h1 {
 	}
 
 header {
-	padding-top: 10px;
+	padding-top: 15px;
 	}
 
 header, button {
@@ -19,10 +18,15 @@ header, button {
 
 header button {
 	float: right;
+}
+
+button {
+	/*border-radius: 10%;*/
+	border: none;
 }	
 
 button, input {
-	font-family: 'Roboto Mono';
+	font-family: 'Roboto';
 }
 
 #fancybox-about-container p {
@@ -31,8 +35,7 @@ button, input {
 
 .preset-buttons button:focus, .preset-buttons button:hover, 
 .search-results button:focus, .search-results button:hover {
-	background-color: white;
-	color: #0A8754;
+	background-color: #08633E;
 	cursor: pointer;
 	outline: none;
 	}
@@ -43,11 +46,13 @@ header img {
 	max-height: 90px;
 	width: auto;
 	border-radius: 5%;
+	margin-left: 10px;
 	}
 
 .preset-buttons button,
 .search-results button {
 	margin: 0 20px 50px 20px;
+	transition: background-color 0.5s ease;
 	}
 
 .form {
@@ -57,7 +62,7 @@ header img {
 
 form {
 	margin-bottom: 50px;
-	padding-bottom: 50px;
+	padding-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 50px;
@@ -80,6 +85,7 @@ label[for=search] {
 	}
 
 form button {
+	transition: background-color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
 	width: 33.3%;
@@ -87,8 +93,9 @@ form button {
 	margin-bottom: 10px;
 	}
 
-form button:focus, form button:hover {
-	background-color: #C2C5BB;
+form button:focus, form button:hover,
+button.more-info:hover, button.more-info:focus {
+	background-color: #DEE6E3;
 	outline: none;
 	cursor: pointer;
 	}
@@ -99,14 +106,9 @@ input {
 	}
 
 button.more-info {
+	transition: background-color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
-	}
-
-button.more-info:hover, button.more-info:focus {
-	background-color: #C2C5BB;
-	outline: none;
-	cursor: pointer;
 	}
 
 .preset-buttons, .buttons,
@@ -187,6 +189,7 @@ footer p {
 @media only screen and (min-width: 640px) {
 	form {
 		margin-top: 0;
+		padding-bottom: 50px;
 	}
 
 	fieldset {
