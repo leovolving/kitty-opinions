@@ -1,4 +1,4 @@
-body {
+body, button, input {
 	font-family: 'Roboto';
 	}
 
@@ -21,13 +21,8 @@ header button {
 }
 
 button {
-	/*border-radius: 10%;*/
 	border: none;
 }	
-
-button, input {
-	font-family: 'Roboto';
-}
 
 #fancybox-about-container p {
 	max-width: 600px;
