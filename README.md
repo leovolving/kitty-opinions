@@ -5,8 +5,8 @@ Rachel, here you go: https://ljyockey.github.io/kitty-opinions/
 
 Search for any location using the Foursquare API and get the top 6 results in the form of buttons. <br>
 When you click on a button, a lightbox opens with more info on that location as well as a tip/review. <br>
-The tip/review contains a Cat GIF and a Ron Swanson quote. <br>
-If you can't decide on a location to search, there are 6 preloaded "popular locations" you can choose. <br>
+The tip/review contains the location's Foursquare rating, a Cat GIF and a Ron Swanson quote. <br>
+If you can't decide on a location to search, there are 3 preloaded "popular locations" you can choose. <br>
 
 <b>Languages</b> - HTML, CSS, JavaScript <br>
 <b>Librairies</b> - 
