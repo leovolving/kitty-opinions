@@ -47,9 +47,11 @@ function getMoreInfo() {
 		$('.more-info-container').slideToggle();
 		if (infoCounter % 2 === 1) {
 			$('.more-info').text('Hide');
+			$('.more-info-container').attr('aria-hidden', 'false');
 		}
 		else {
 			$('.more-info').text('More Info');
+			$('.more-info-container').attr('aria-hidden', 'true');
 		}
 		});
 	}
