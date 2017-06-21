@@ -44,6 +44,10 @@ header img {
 	margin-left: 10px;
 	}
 
+.more-info {
+	margin-bottom: 15px;
+	}
+
 .info {
 	text-align: center;
 	padding-top: 20px;
@@ -67,6 +71,13 @@ header img {
 .form {
 	background-color: #0A8754;
 	text-align: center;
+	}
+
+form, button {
+	box-shadow: 
+		0 8px 10px 1px rgba(0,0,0,.14), 
+		0 3px 14px 2px rgba(0,0,0,.12), 
+		0 5px 5px -3px rgba(0,0,0,.2);
 	}
 
 form {
@@ -183,8 +194,9 @@ footer a:hover, footer a:focus {
 	text-decoration: none;
 	}
 
-ul {
+.left {
 	float: left;
+	padding-left: 0;
 	}
 
 li {
@@ -192,9 +204,17 @@ li {
 	list-style-type: none;
 	}
 
-footer p {
+.right, .right li {
 	float: right;
 	}
+
+.right a {
+	margin-left: 2px;
+	}
+
+.visually-hidden {
+	display: none;
+ 	}
 
 @media only screen and (min-width: 640px) {
 	.form {
@@ -248,4 +268,12 @@ footer p {
 		float: left;
 		margin-right: 10px;
 		}
+
+	.right {
+		padding-right: 50px;
+		}
+	.right a {
+		margin-left: 10px;
+		}
+
 	}
