@@ -1,3 +1,7 @@
+body, input {
+	background-color: #F2F9F4;
+}
+
 body, button, input {
 	font-family: 'Roboto';
 	}
