@@ -26,6 +26,8 @@ header button {
 
 button {
 	border: none;
+	border-radius: 30px;
+	padding: 10px;
 }	
 
 .iframe p {
