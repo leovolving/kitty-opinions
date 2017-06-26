@@ -4,21 +4,22 @@ body, input {
 
 body, button, input {
 	font-family: 'Roboto';
-	}
+}
 
 h1 {
 	font-family: 'Indie Flower';
 	margin-bottom: 15px;
-	}
+}
 
 header {
 	padding-top: 15px;
-	}
+	margin-bottom: 10px;
+}
 
 header, button {
 	background-color: #0A8754;
 	color: white;
-	}
+}
 
 header button {
 	float: right;
@@ -39,7 +40,7 @@ button {
 	background-color: #08633E;
 	cursor: pointer;
 	outline: none;
-	}
+}
 
 header img {
 	display: inline-block;
@@ -48,16 +49,16 @@ header img {
 	width: auto;
 	border-radius: 5%;
 	margin-left: 10px;
-	}
+}
 
 .more-info {
 	margin-bottom: 15px;
-	}
+}
 
 .info {
 	text-align: center;
 	padding-top: 20px;
-	}
+}
 
 .info h2 {
 	text-align: left;
@@ -72,19 +73,19 @@ header img {
 .search-results button {
 	margin: 0 20px 50px 20px;
 	transition: background-color 0.5s ease;
-	}
+}
 
 .form {
 	background-color: #0A8754;
 	text-align: center;
-	}
+}
 
-form, button {
+header, form, button {
 	box-shadow: 
 		0 8px 10px 1px rgba(0,0,0,.14), 
 		0 3px 14px 2px rgba(0,0,0,.12), 
 		0 5px 5px -3px rgba(0,0,0,.2);
-	}
+}
 
 form {
 	margin-bottom: 50px;
@@ -92,23 +93,23 @@ form {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 50px;
-	}
+}
 
 fieldset {
 	font-size: 1.2em;
 	color: white;
 	margin: 0 10px;
 	text-align: left;
-	}
+}
 
 label {
 	border-bottom: 1px solid white;
-	}
+}
 
 label[for=search] {
 	font-size: 1.2em;
 	color: white;
-	}
+}
 
 form button {
 	transition: background-color 0.5s ease;
@@ -117,52 +118,52 @@ form button {
 	width: 33.3%;
 	margin-right: auto;
 	margin-bottom: 10px;
-	}
+}
 
 form button:focus, form button:hover,
 button.more-info:hover, button.more-info:focus {
 	background-color: #DEE6E3;
 	outline: none;
 	cursor: pointer;
-	}
+}
 
 input {
 	background-color: #C2C5BB;
 	margin-bottom: 10px;
-	}
+}
 
 button.more-info {
 	transition: background-color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
-	}
+}
 
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
-	}
+}
 
 .iframe {
 	display: none;
 	background-color: #8CD790;
-	}
+}
 
 .iframe button {
 	float: right;
-	}
+}
 
 .iframe button:focus,
 .iframe a:focus {
 	outline-color: #0A8754;
-	}
+}
 
 .results img {
 	margin-bottom: 10px;
-	}
+}
 
 .quote h3 {
 	margin: 10px 0;
-	}
+}
 
 .quote img {
 	width: 200px;
@@ -170,7 +171,7 @@ button.more-info {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
-	}
+}
 
 #search-fail {
 	position: relative;
@@ -179,7 +180,7 @@ button.more-info {
 	font-weight: bold;
 	color: red;
 	font-size: 0.8em;
-	}
+}
 
 #search-fail-image {
 	width: 100%;
@@ -187,40 +188,40 @@ button.more-info {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	}
+}
 
 footer a {
 	color: black;
 	text-decoration: underline;
-	}
+}
 
 footer a:hover, footer a:focus {
 	color: #0A8754;
 	outline-color: #0A8754;
 	text-decoration: none;
-	}
+}
 
 .left {
 	float: left;
 	padding-left: 0;
-	}
+}
 
 li {
 	display: inline;
 	list-style-type: none;
-	}
+}
 
 .right, .right li {
 	float: right;
-	}
+}
 
 .right a {
 	margin-left: 2px;
-	}
+}
 
 .visually-hidden {
 	display: none;
- 	}
+	}
 
 @media only screen and (min-width: 640px) {
 	.form {
@@ -236,50 +237,50 @@ li {
 	fieldset {
 		width: 50%;
 		margin: 0 auto;
-		}
+	}
 
 	form button {
 		width: 15%;
-		}
+	}
 	.more-info-container p {
 		max-width: 600px;
 		margin-right: auto;
 		margin-left: auto;
-		}
+	}
 
 		iframe {
 			width: 560px; 
 			height: 315px; 
-		}
+	}
 
 	#search-fail {
 		font-size: 1.2em;
-		}
+	}
 
 	#search-fail-image {
 		max-width: 500px;
-		}
+	}
 
 	#search-fail {
 	position: relative;
 	top: 300px;
-		}
+	}
 
 	.quote {
 		max-width: 800px;
-		}
+	}
 
 	.quote img {
 		display: inline;
 		float: left;
 		margin-right: 10px;
-		}
+	}
 
 	.right {
 		padding-right: 50px;
-		}
+	}
 	.right a {
 		margin-left: 10px;
-		}
-
 	}
+
+}
