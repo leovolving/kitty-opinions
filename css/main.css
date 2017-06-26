@@ -3,7 +3,8 @@ body, input {
 }
 
 body, button, input {
-	font-family: 'Roboto';
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.1em;
 }
 
 h1 {
@@ -29,6 +30,7 @@ button {
 	border: none;
 	border-radius: 30px;
 	padding: 10px;
+	letter-spacing: 0.01em;
 }	
 
 .iframe p {
@@ -78,6 +80,7 @@ header img {
 .form {
 	background-color: #0A8754;
 	text-align: center;
+	border-radius: 2px;
 }
 
 header, form, button {
