@@ -72,6 +72,10 @@ header img {
 	margin-bottom: 10px;
 }
 
+.buttons {
+	text-align: center;
+}
+
 .preset-buttons button,
 .search-results button {
 	margin: 0 20px 50px 20px;
@@ -253,6 +257,9 @@ li {
 	form button {
 		width: 15%;
 	}
+	.buttons {
+	text-align: left;
+	}		
 	.more-info-container p {
 		max-width: 600px;
 		margin-right: auto;
