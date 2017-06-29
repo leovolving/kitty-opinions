@@ -7,35 +7,24 @@ var infoCounter = 0;
 //data for preset buttons
 var buttons = [
 	{
-		class: '4a6cc0f0f964a52088d11fe3',
-		content: 'Universal Studios Hollywood'
-	},
-	{
 		class: '40f86c00f964a520bd0a1fe3',
 		content: 'Disneyland'
 	},
 	{
-		class: '49e27207f964a52016621fe3',
-		content: 'Santa Monica Beach'
+		class: '416dc180f964a5209b1d1fe3',
+		content: 'Space Needle'
+	},
+	{
+		class: '3fd66200f964a520ddf01ee3',
+		content: 'Yankee Stadium'
 	}];
 
 function displayButtons() {
 	var buttonsHTML = '';
-	//counter to monitor placesment of row div's
-	var counter = 0;
 	buttons.forEach(function(item) {
-		//adds new row div for every 3rd item
-		if (counter % 3 === 0) {
-			buttonsHTML += '<div class="row">'
-		}
-		buttonsHTML += '<div class="col-md-4"><button type="submit" class="' +
+		buttonsHTML += '<div class="preset-buttons-entry"><button type="submit" class="' +
 		item.class + '" data-fancybox data-src="#fancybox-container">' +
 		item.content + '</button></div>'
-		//closes row div tag at before every 3rd row
-		if (counter % 3 === 2) {
-			buttonsHTML += '</div>'
-		}
-		counter++;
 	})
 	$('.buttons').html(buttonsHTML);
 	}
@@ -50,7 +39,7 @@ function getMoreInfo() {
 			$('.more-info-container').attr('aria-hidden', 'false');
 		}
 		else {
-			$('.more-info').text('More Info');
+			$('.more-info').text('What?');
 			$('.more-info-container').attr('aria-hidden', 'true');
 		}
 		});

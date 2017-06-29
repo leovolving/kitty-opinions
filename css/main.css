@@ -39,7 +39,7 @@ button {
 
 .preset-buttons button:focus, .preset-buttons button:hover, 
 .search-results button:focus, .search-results button:hover {
-	background-color: #08633E;
+	background-color: #2D3047;
 	cursor: pointer;
 	outline: none;
 }
@@ -69,6 +69,7 @@ header img {
 .more-info-container {
 	display: none;
 	padding-top: 10px;
+	margin-bottom: 10px;
 }
 
 .preset-buttons button,
@@ -115,7 +116,8 @@ label[for=search] {
 }
 
 form button {
-	transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease,
+	color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
 	width: 33.3%;
@@ -125,7 +127,8 @@ form button {
 
 form button:focus, form button:hover,
 button.more-info:hover, button.more-info:focus {
-	background-color: #DEE6E3;
+	background-color: #2D3047;
+	color: white;
 	outline: none;
 	cursor: pointer;
 }
@@ -136,7 +139,8 @@ input {
 }
 
 button.more-info {
-	transition: background-color 0.5s ease;
+	transition: background-color 0.5s ease,
+	color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
 }
@@ -144,6 +148,10 @@ button.more-info {
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
+}
+
+.preset-buttons-entry {
+	display: inline-block;
 }
 
 .iframe {
