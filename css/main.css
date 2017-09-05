@@ -1,3 +1,9 @@
+body {
+	background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), 
+	url("../img/kittens.jpeg");
+	color: white;
+}
+
 body, input {
 	background-color: #F2F9F4;
 }
@@ -12,18 +18,14 @@ h1 {
 	margin-bottom: 15px;
 }
 
-header {
+.header-main {
 	padding-top: 15px;
-	margin-bottom: 10px;
+	text-align: center;
 }
 
-header, button {
+button {
 	background-color: #0A8754;
 	color: white;
-}
-
-header button {
-	float: right;
 }
 
 button {
@@ -51,6 +53,10 @@ header img {
 	width: auto;
 	border-radius: 5%;
 	margin-left: 10px;
+}
+
+main {
+	color: white;
 }
 
 .more-info {
@@ -83,12 +89,12 @@ header img {
 }
 
 .form {
-	background-color: #0A8754;
+	/* background-color: #0A8754; */
 	text-align: center;
 	border-radius: 2px;
 }
 
-header, form, button {
+header, button {
 	box-shadow: 
 		0 8px 10px 1px rgba(0,0,0,.14), 
 		0 3px 14px 2px rgba(0,0,0,.12), 
@@ -100,7 +106,7 @@ form {
 	padding-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-top: 50px;
+	padding-top: 30px;
 }
 
 fieldset {
@@ -190,11 +196,11 @@ button.more-info {
 
 #search-fail {
 	position: relative;
-	top: 200px;
+	top: 185px;
 	text-align: center;
 	font-weight: bold;
 	color: red;
-	font-size: 0.8em;
+	font-size: 1.25em;
 }
 
 #search-fail-image {
@@ -206,7 +212,7 @@ button.more-info {
 }
 
 footer a {
-	color: black;
+	color: white;
 	text-decoration: underline;
 }
 
@@ -239,18 +245,25 @@ li {
 	}
 
 @media only screen and (min-width: 640px) {
+	h1 {
+		font-size: 5em;
+	}
+	.header-main p {
+		font-size: 2em;
+	}
+	main {
+		min-height: 800px;
+	}
 	.form {
 		width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	form {
-		margin-top: 0;
-		padding-bottom: 50px;
+		margin-top: 60px;
 	}
 
 	fieldset {
-		width: 50%;
 		margin: 0 auto;
 	}
 
@@ -259,7 +272,10 @@ li {
 	}
 	.buttons {
 	text-align: left;
-	}		
+	}	
+	.info {
+		margin-bottom: 50px;
+	}	
 	.more-info-container p {
 		max-width: 600px;
 		margin-right: auto;
@@ -299,6 +315,9 @@ li {
 	}
 	.right a {
 		margin-left: 10px;
+	}
+	footer {
+		font-size: 1.25em;
 	}
 
 }

@@ -12,44 +12,42 @@
 		<link rel="icon" type="image/icon" href="img/favicon.ico">
 	</head>
 	<body>
-
-		<header>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<img src="img/rajah.PNG">
-						<h1>Kitty Opinions</h1>
-						<p>Foursquare + Cat GIFs + Ron Swanson quotes</p>
-					</div>
-				</div>
-			</div>
-		</header>
 		
 		<main>
 
-		<section class="info container">
-			<h2>Hello, Human.</h2>
-			<p>See the world through the eyes of fury friends who have spent way too much time in Pawnee, Indiana.</p>
-			<button class="more-info" type="submit">What?</button>
-			<div class="more-info-container" aria-hidden="true">
-				<p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
-					<p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
-					<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</section>
+		<section class="header-main">
+			<h1>Kitty Opinions</h1>
+			<p>Foursquare + Cat GIFs + Ron Swanson quotes</p>
+		</section>	
 
 		<section class="form">
 			<form class="search-form">
-				<label for="search">Search the globe.</label><br>
 				<fieldset class="form-group">
-				<label for="searchItem">Place</label>
+					<div class="container">
+					<div class="row">
+				<div class="col-md-6">	
+					<label for="searchItem">Place</label>
 					<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="ex. donuts, park, hospitals" required>
-				<label for="searchLocation">Location</label>
+				</div>	
+				<div class="col-md-6">
+					<label for="searchLocation">Location</label>
 					<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
+				</div>
+			</div>
+		</div>
 				</fieldset>
 				<button type="submit" class="searchSubmit">Submit</button>
 			</form>
 		</section>
+
+		<section class="info container">
+				<div class="more-info-container" aria-hidden="true">
+					<p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
+						<p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
+						<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<button class="more-info" type="submit">What?</button>
+			</section>
 
 			<section class="search-results container js-buttons"></section>
 
