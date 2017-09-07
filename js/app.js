@@ -5,6 +5,7 @@ var venue;
 var infoCounter = 0;
 
 //data for preset buttons
+//this data can be changed if different preset options are preferred
 var buttons = [
   {
     class: '40f86c00f964a520bd0a1fe3',
@@ -56,17 +57,30 @@ function searchSubmit() {
   })
 }
 
+function searchFail() {
+  return '<p id="search-fail">No results. Check your spelling, human.</p>' +
+  '<a href="http://thecatapi.com/?id=75a" target="blank">' +
+  '<img id="search-fail-image" src="http://thecatapi.com/api/images/get?id=75a"></a>';
+}
+
 function getApiSearch(url, searchItem, location, callback) {
   var query = {
-    client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
-    client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
-    query: searchItem,
-    near: location,
-    limit: 6,
-    v: 20170401,
-    m: 'foursquare'
+    url: url,
+    data: {
+      client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
+      client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
+      query: searchItem,
+      near: location,
+      limit: 6,
+      v: 20170401,
+      m: 'foursquare'
+    },
+    success: callback,
+    error: function() {
+      $('.search-results').html(searchFail()).hide().slideDown('3s');
+    }
   }
-  $.getJSON(url, query, callback);
+  $.ajax(query);
 }
 
 function displaySearchResults(data) {
@@ -91,8 +105,7 @@ function displaySearchResults(data) {
   }
   //runs if search yielded no results
   else {
-    searchResults += '<p id="search-fail">No results. Check your spelling, human.</p>' +
-  '<a href="http://thecatapi.com/?id=75a" target="blank"><img id="search-fail-image" src="http://thecatapi.com/api/images/get?id=75a"></a>';
+    searchResults += searchFail();
   }
   $('.search-results').html(searchResults).hide().slideDown('3s');
 }
