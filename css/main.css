@@ -24,6 +24,7 @@ h1 {
 .header-main {
 	padding-top: 15px;
 	text-align: center;
+	margin-bottom: 0;
 }
 
 button {
@@ -46,15 +47,6 @@ button {
 	outline: none;
 }
 
-header img {
-	display: inline-block;
-	float: right;
-	max-height: 90px;
-	width: auto;
-	border-radius: 5%;
-	margin-left: 10px;
-}
-
 main {
 	color: white;
 }
@@ -65,7 +57,6 @@ main {
 
 .info {
 	text-align: center;
-	padding-top: 20px;
 }
 
 .info h2 {
@@ -93,7 +84,7 @@ main {
 	border-radius: 2px;
 }
 
-header, button {
+.shadow, .search-results button, .buttons button {
 	box-shadow: 
 		0 8px 10px 1px rgba(0,0,0,.14), 
 		0 3px 14px 2px rgba(0,0,0,.12), 
@@ -146,8 +137,10 @@ input {
 button.more-info {
 	transition: background-color 0.5s ease,
 	color 0.5s ease;
-	background-color: white;
-	color: #0A8754;
+	text-decoration: underline;
+	background-color: transparent;
+	color: white;
+	font-size: 1.3em;
 }
 
 .preset-buttons, .buttons,
