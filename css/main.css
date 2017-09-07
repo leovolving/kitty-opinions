@@ -121,8 +121,7 @@ form button {
 	margin-bottom: 10px;
 }
 
-form button:focus, form button:hover,
-button.more-info:hover, button.more-info:focus {
+form button:focus, form button:hover {
 	background-color: #2D3047;
 	color: white;
 	outline: none;
@@ -143,6 +142,14 @@ button.more-info {
 	font-size: 1.3em;
 }
 
+button.more-info:hover {
+	color: red;
+}
+
+button.more-info:focus {
+	outline-color: #0A8754;
+}
+
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
@@ -154,7 +161,7 @@ button.more-info {
 
 .iframe {
 	display: none;
-	background-color: #8CD790;
+	background-color: #0A8754;
 }
 
 .iframe button {
@@ -163,7 +170,7 @@ button.more-info {
 
 .iframe button:focus,
 .iframe a:focus {
-	outline-color: #0A8754;
+	outline-color: #8CD790;
 }
 
 .results img {
