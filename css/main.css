@@ -144,6 +144,7 @@ button.more-info {
 
 button.more-info:hover {
 	color: red;
+	cursor: pointer;
 }
 
 button.more-info:focus {
@@ -153,6 +154,11 @@ button.more-info:focus {
 .preset-buttons, .buttons,
  .search-results {
 	margin-top: 50px;
+	text-align: center;
+}
+
+.preset-buttons {
+	text-align: center;
 }
 
 .preset-buttons-entry {
@@ -264,9 +270,6 @@ li {
 
 	form button {
 		width: 15%;
-	}
-	.buttons {
-	text-align: left;
 	}	
 	.info {
 		margin-bottom: 50px;
