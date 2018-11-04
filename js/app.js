@@ -136,7 +136,7 @@ function getQuotes(callback) {
 
 function getCatImage(callback) {
   var query = {
-    url: 'https://thecatapi.com/api/images/get?format=html&type=gif',
+    url: 'https://api.thecatapi.com/v1/images/search?format=src&mime_types=gif',
     dataType: 'html',
     success: callback,
     error: function(text) {
