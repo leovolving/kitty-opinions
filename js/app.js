@@ -1,3 +1,5 @@
+'use strict';
+
 var foursquareUrl = 'https://api.foursquare.com/v2/venues/';
 var foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
 var image = '';
@@ -25,8 +27,8 @@ function displayButtons() {
   buttons.forEach(function(item) {
     buttonsHTML += '<div class="preset-buttons-entry"><button type="submit" class="' +
   item.class + '" data-fancybox data-src="#fancybox-container">' +
-  item.content + '</button></div>'
-  })
+  item.content + '</button></div>';
+  });
   $('.buttons').html(buttonsHTML);
 }
 
@@ -54,7 +56,7 @@ function searchSubmit() {
     getApiSearch(foursquareSearchUrl, searchItem.val(), location.val(), displaySearchResults);
     searchItem.val('');
     location.val('');
-  })
+  });
 }
 
 function searchFail() {
@@ -79,7 +81,7 @@ function getApiSearch(url, searchItem, location, callback) {
     error: function() {
       $('.search-results').html(searchFail()).hide().slideDown('3s');
     }
-  }
+  };
   $.ajax(query);
 }
 
@@ -101,7 +103,7 @@ function displaySearchResults(data) {
         searchResults += '</div>';
       }
       counter++;
-    })
+    });
   }
   //runs if search yielded no results
   else {
@@ -118,8 +120,8 @@ function getApiData(url, callback) {
     client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
     v: 20170401,
     m: 'foursquare'
-  }
-  $.getJSON(url, query, callback)
+  };
+  $.getJSON(url, query, callback);
 }
 
 function getQuotes(callback) {
@@ -127,21 +129,21 @@ function getQuotes(callback) {
     url: 'https://ron-swanson-quotes.herokuapp.com/v2/quotes',
     dataType: 'json',
     type: 'GET',
-	    success: callback
-  }
+    success: callback
+  };
   $.ajax(query);
 }
 
 function getCatImage(callback) {
   var query = {
-    url: "https://thecatapi.com/api/images/get?format=html&type=gif",
+    url: 'https://thecatapi.com/api/images/get?format=html&type=gif',
     dataType: 'html',
     success: callback,
     error: function(text) {
       image = text.responseText;
       return image;
     }
-  }
+  };
   $.ajax(query);
 }
 
@@ -184,7 +186,7 @@ function displayApiData(data) {
     venue.photos.groups[0].items.forEach(function(item) {
       results += '<a href="' + item.prefix + '200x200' + item.suffix +
    '" data-fancybox="images"><img src="' + item.prefix + '150x150' + item.suffix + '"></a> ';
-    })
+    });
   }
   //runs if location had no photos	
   else {
@@ -201,7 +203,7 @@ function apiButtonDetails() {
     foursquareUrl += this.className;
     getApiData(foursquareUrl, displayApiData);
     foursquareUrl = 'https://api.foursquare.com/v2/venues/';
-  })
+  });
 }
 
 $(function() {
@@ -209,4 +211,4 @@ $(function() {
   getMoreInfo();
   searchSubmit();
   apiButtonDetails();
-})
+});
