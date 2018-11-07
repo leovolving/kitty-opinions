@@ -136,7 +136,7 @@ function getQuotes(callback) {
 
 function getCatImage(callback) {
   var query = {
-    url: 'https://api.thecatapi.com/v1/images/search?format=src&mime_types=gif',
+    url: 'https://api.thecatapi.com/v1/images/search?size=full&mime_types=gif&format=json&order=RANDOM&page=0&limit=1',
     dataType: 'html',
     success: callback,
     error: function(text) {
@@ -148,14 +148,14 @@ function getCatImage(callback) {
 }
 
 function catImageMaker(text) {
-  image = text;
+  image = JSON.parse(text)[0].url;
   //call for Ron Swanson quote here due to lag in Cat API
   getQuotes(displayQuote); 
   return text;
 }
 
 function displayQuote(data) {
-  var quoteHTML = '<h3>Tips/Reviews:</h3><p>' + image +
+  var quoteHTML = '<h3>Tips/Reviews:</h3><p><img src="' + image + '" alt="">' +
  venue.name + ' has ';
   if (venue.rating) {
     quoteHTML += 'a rating of ' + venue.rating +
