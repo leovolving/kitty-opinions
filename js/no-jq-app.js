@@ -63,12 +63,27 @@ const requestData = (url, query) => {
 const displayLocationData = (event) => {
   const locationId = event.target.id;
 
-  const foursquareData = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
-  const catGif = requestData(catApiUrl);
-  const swansonQuote = requestData(swansonQuoteUrl);
+  const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
+  const catGifRequest = requestData(catApiUrl);
+  const swansonRequest = requestData(swansonQuoteUrl);
 
-  return Promise.all([foursquareData, catGif, swansonQuote]).then(response => console.log(response));
+  return Promise.all([foursquareRequest, catGifRequest, swansonRequest]).then(responses => {
+    const venueData = responses[0].response.venue;
+    const catGifSrc = responses[1][0].url;
+    const swansonQuote = responses[2][0];
+    console.log('venueData, catGifSrc, swansonQuote', [venueData, catGifSrc, swansonQuote]);
+    document.getElementsByClassName('quote')[0].innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
+  });
 };
+
+const createRatingText = rating => rating ? `a rating of ${rating}/10 - Whatever.` : 'not been rated. Figures.';
+
+const getQuoteHtml = (venueData, catGifSrc, swansonQuote) => `
+  <h3>Tips/Reviews:</h3>
+    <p>
+        <img src="${catGifSrc}" alt="">
+        ${venueData.name} has ${createRatingText(venueData.rating)} ${swansonQuote}
+    </p>`;
 
 const addEventListenersToClassList = (className, eventType, callback) => {
   const elements = document.getElementsByClassName(className);
