@@ -1,7 +1,16 @@
 'use strict';
 
-const foursquareUrl = 'https://api.foursquare.com/v2/venues/';
+const foursquareVenueUrl = 'https://api.foursquare.com/v2/venues/';
 const foursquareSearchUrl = 'https://api.foursquare.com/v2/venues/search';
+const fourSquareQuery = {
+  client_id: '0A31O4JMRBGBWYFEXCZNR3FRPGMHB11NCUMWC0GT0XQLAKU0',
+  client_secret: 'FPRGSH34PX12SRNAWXJTHGQYUZFP31ZHA5NRWMIMDBKTOK11',
+  v: 20170401,
+  m: 'foursquare'
+};
+
+const swansonQuoteUrl = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
+const catApiUrl = 'https://api.thecatapi.com/v1/images/search?size=full&mime_types=gif&format=json&order=RANDOM&page=0&limit=1';
 
 const displayPresetLocations = () => {
   let presetHtml = '';
@@ -21,12 +30,48 @@ const displayPresetLocations = () => {
   presetLocations.forEach(location => {
     presetHtml += `
         <div class="preset-buttons-entry">
-            <button type="submit" class="${location.id}" data-fancybox data-src="#fancybox-container">
+            <button type="submit" class="location-button" id="${location.id}" data-fancybox data-src="#fancybox-container">
                 ${location.name}
             </button>
         </div>`;
   });
   document.getElementById('preset-container').innerHTML = presetHtml;
+  addEventListenersToClassList('location-button', 'click', displayLocationData);
+};
+
+const formatQueryParams = (query) => {
+  let result = '?';
+  for (const key in query) {
+    result += `${key}=${query[key]}&`;
+  }
+  return result;
+};
+
+const requestData = (url, query) => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    if (query) url += formatQueryParams(query);
+    xhr.open('GET', url);
+    xhr.onload = () => resolve(JSON.parse(xhr.response));
+    xhr.send();
+  });
+};
+
+const displayLocationData = (event) => {
+  const locationId = event.target.id;
+
+  const foursquareData = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
+  const catGif = requestData(catApiUrl);
+  const swansonQuote = requestData(swansonQuoteUrl);
+
+  return Promise.all([foursquareData, catGif, swansonQuote]).then(response => console.log(response));
+};
+
+const addEventListenersToClassList = (className, eventType, callback) => {
+  const elements = document.getElementsByClassName(className);
+  for (let i=0; i<elements.length; i++) {
+    elements[i].addEventListener(eventType, callback);
+  }
 };
 
 displayPresetLocations();
