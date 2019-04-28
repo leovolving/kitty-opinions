@@ -30,14 +30,17 @@ const displayPresetLocations = () => {
   presetLocations.forEach(location => {
     presetHtml += `
         <div class="preset-buttons-entry">
-            <button type="submit" class="location-button" id="${location.id}" data-fancybox data-src="#fancybox-container">
-                ${location.name}
-            </button>
+            ${createLocationButton(location)}
         </div>`;
   });
   document.getElementById('preset-container').innerHTML = presetHtml;
   addEventListenersToClassList('location-button', 'click', displayLocationData);
 };
+
+const createLocationButton = location => `
+    <button type="submit" class="location-button" id="${location.id}" data-fancybox data-src="#fancybox-container">
+        ${location.name}
+    </button>`;
 
 const formatQueryParams = (query) => {
   let result = '?';
