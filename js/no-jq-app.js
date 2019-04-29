@@ -140,7 +140,11 @@ const generateSearchResultLocationButtons = venues => {
   return result;
 };
 
-const displaySearchFailure = () => console.log('oops soomething wnt wrong');
+const displaySearchFailure = () => `
+    <p id="search-fail">No results. Check your spelling, human.</p>
+    <a href="http://thecatapi.com/?id=75a" target="blank">
+        <img id="search-fail-image" src="http://thecatapi.com/api/images/get?id=75a">
+    </a>`;
 
 const displaySearchResults = (event) => {
   event.preventDefault();
