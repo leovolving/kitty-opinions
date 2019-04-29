@@ -157,9 +157,22 @@ const displaySearchResults = (event) => {
   location.value = '';
 };
 
-const setupFormListener = () => {
+const toggleMoreInfo = (e) => {
+  e.preventDefault();
+
+  const container = document.getElementsByClassName('more-info-container')[0];
+  const moreInfoLink = event.target;
+  const isContainerHidden = container.getAttribute('aria-hidden') === 'true' ? true : false;
+
+  moreInfoLink.innerText = isContainerHidden ? 'Hide' : 'What?';
+  container.style.display = isContainerHidden ? 'block' : 'none';
+  container.setAttribute('aria-hidden', !isContainerHidden);
+};
+
+const setupListeners = () => {
   addEventListenersToClassList('search-form', 'submit', displaySearchResults);
+  addEventListenersToClassList('more-info', 'click', toggleMoreInfo);
 };
 
 displayPresetLocations();
-setupFormListener();
+setupListeners();
