@@ -105,4 +105,41 @@ const addEventListenersToClassList = (className, eventType, callback) => {
   }
 };
 
+const getApiSearch = (searchItem, location) => {
+    const query = {
+        limit: 6,
+        query: searchItem,
+        near: location,
+        ...fourSquareQuery
+    }
+
+    const containerElement = document.getElementsByClassName('search-results')[0]
+
+    return requestData(foursquareSearchUrl, query)
+        .then(response => containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues))
+        .catch(e => containerElement.innerHTML = displaySearchFailure())
+};
+
+const generateSearchResultLocationButtons = venues => venues.length
+    ? console.log('venues', venues)
+    : displaySearchFailure();
+
+const displaySearchFailure = () => console.log('oops soomething wnt wrong')
+
+const displaySearchResults = (event) => {
+  event.preventDefault();
+
+  const searchItem = document.getElementsByName('searchItem')[0];
+  const location = document.getElementsByName('searchLocation')[0];
+
+  getApiSearch(searchItem.value, location.value);
+  searchItem.value = '';
+  location.value = '';
+};
+
+const setupFormListener = () => {
+  addEventListenersToClassList('search-form', 'submit', displaySearchResults);
+};
+
 displayPresetLocations();
+setupFormListener();
