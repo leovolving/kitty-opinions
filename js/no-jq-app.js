@@ -72,9 +72,22 @@ const displayLocationData = (event) => {
     const catGifSrc = responses[1][0].url;
     const swansonQuote = responses[2][0];
     console.log('venueData, catGifSrc, swansonQuote', [venueData, catGifSrc, swansonQuote]);
+    document.getElementsByClassName('results')[0].innerHTML = getLocationDetailsHtml(venueData);
     document.getElementsByClassName('quote')[0].innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
   });
 };
+
+const createAddressText = location => location.address || 'address unknown';
+
+const generateLocationPhotosHtml = (photoList) => photoList
+  ? photoList.items.map(item => `<a href="${item.prefix}200x200${item.suffix} data-fancybox="images"><img src="${item.prefix}150x150${item.suffix}"></a>`)
+  : '<p>No photos :(</p>';
+
+const getLocationDetailsHtml = (venueData) => `
+  <h2>${venueData.name}</h2>
+  <p>${createAddressText(venueData.location)}, ${venueData.location.city}, ${venueData.location.country}</p>
+  ${generateLocationPhotosHtml(venueData.photos.groups[1])}
+`;
 
 const createRatingText = rating => rating ? `a rating of ${rating}/10 - Whatever.` : 'not been rated. Figures.';
 
