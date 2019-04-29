@@ -71,7 +71,7 @@ const displayLocationData = (event) => {
     const venueData = responses[0].response.venue;
     const catGifSrc = responses[1][0].url;
     const swansonQuote = responses[2][0];
-    console.log('venueData, catGifSrc, swansonQuote', [venueData, catGifSrc, swansonQuote]);
+
     document.getElementsByClassName('results')[0].innerHTML = getLocationDetailsHtml(venueData);
     document.getElementsByClassName('quote')[0].innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
   });
@@ -116,13 +116,29 @@ const getApiSearch = (searchItem, location) => {
     const containerElement = document.getElementsByClassName('search-results')[0]
 
     return requestData(foursquareSearchUrl, query)
-        .then(response => containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues))
-        .catch(e => containerElement.innerHTML = displaySearchFailure())
+        .then(response => {
+            containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues)
+            addEventListenersToClassList('new-search-results', 'click', displayLocationData)
+        }).catch(e => containerElement.innerHTML = displaySearchFailure())
 };
 
-const generateSearchResultLocationButtons = venues => venues.length
-    ? console.log('venues', venues)
-    : displaySearchFailure();
+const generateOpeningRowDiv = i => i % 3 === 0 ? '<div class="row">' : '';
+
+const generateClosingRowDiv = i => i % 3 === 2 ? '</div>' : '';
+
+const generateSearchResultLocationButtons = venues => {
+    if (!venues.length) return displaySearchFailure();
+    let result = '';
+    venues.forEach((venue, index) => {
+        result += `
+        ${generateOpeningRowDiv(index)}
+            <div class="col-md-4 new-search-results">
+                ${createLocationButton(venue)}
+            </div>
+        ${generateClosingRowDiv(index)}
+    `})
+    return result
+};
 
 const displaySearchFailure = () => console.log('oops soomething wnt wrong')
 
