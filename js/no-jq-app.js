@@ -106,20 +106,20 @@ const addEventListenersToClassList = (className, eventType, callback) => {
 };
 
 const getApiSearch = (searchItem, location) => {
-    const query = {
-        limit: 6,
-        query: searchItem,
-        near: location,
-        ...fourSquareQuery
-    }
+  const query = {
+    limit: 6,
+    query: searchItem,
+    near: location,
+    ...fourSquareQuery
+  };
 
-    const containerElement = document.getElementsByClassName('search-results')[0]
+  const containerElement = document.getElementsByClassName('search-results')[0];
 
-    return requestData(foursquareSearchUrl, query)
-        .then(response => {
-            containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues)
-            addEventListenersToClassList('new-search-results', 'click', displayLocationData)
-        }).catch(e => containerElement.innerHTML = displaySearchFailure())
+  return requestData(foursquareSearchUrl, query)
+    .then(response => {
+      containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues);
+      addEventListenersToClassList('new-search-results', 'click', displayLocationData);
+    }).catch(e => containerElement.innerHTML = displaySearchFailure());
 };
 
 const generateOpeningRowDiv = i => i % 3 === 0 ? '<div class="row">' : '';
@@ -127,20 +127,20 @@ const generateOpeningRowDiv = i => i % 3 === 0 ? '<div class="row">' : '';
 const generateClosingRowDiv = i => i % 3 === 2 ? '</div>' : '';
 
 const generateSearchResultLocationButtons = venues => {
-    if (!venues.length) return displaySearchFailure();
-    let result = '';
-    venues.forEach((venue, index) => {
-        result += `
+  if (!venues.length) return displaySearchFailure();
+  let result = '';
+  venues.forEach((venue, index) => {
+    result += `
         ${generateOpeningRowDiv(index)}
             <div class="col-md-4 new-search-results">
                 ${createLocationButton(venue)}
             </div>
         ${generateClosingRowDiv(index)}
-    `})
-    return result
+    `;});
+  return result;
 };
 
-const displaySearchFailure = () => console.log('oops soomething wnt wrong')
+const displaySearchFailure = () => console.log('oops soomething wnt wrong');
 
 const displaySearchResults = (event) => {
   event.preventDefault();
