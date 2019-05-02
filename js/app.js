@@ -164,7 +164,7 @@ const toggleMoreInfo = (e) => {
   const moreInfoLink = event.target;
   const isContainerHidden = container.getAttribute('aria-hidden') === 'true' ? true : false;
 
-  moreInfoLink.innerText = isContainerHidden ? 'Hide' : 'What?';
+  moreInfoLink.innerText = isContainerHidden ? 'Hide' : 'More Info';
   container.style.display = isContainerHidden ? 'block' : 'none';
   container.setAttribute('aria-hidden', !isContainerHidden);
 };
