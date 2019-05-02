@@ -4,6 +4,10 @@ body {
 	font-size: 1.1em;
 }
 
+header, .info {
+    text-align: center;
+}
+
 h1 {
 	font-family: 'Indie Flower';
 	margin-bottom: 15px;
@@ -47,6 +51,10 @@ button:hover, a:hover {
 
 button {
     font-family: 'Oswald', sans-serif;
+}
+
+.searchSubmit {
+    margin-top: 10px;
 }
 
 .shadow, .search-results button, .buttons button {
