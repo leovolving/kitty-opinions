@@ -1,14 +1,8 @@
 body {
-	background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), 
-	url("../img/kittens.jpeg");
-	color: white;
-	background-attachment: fixed;
-	background-size: cover;
+	background-color: #fff;
 	letter-spacing: 0.09em;
-}
-
-body, input {
-	background-color: #F2F9F4;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.1em;
 }
 
 body, button, input {
@@ -27,14 +21,13 @@ h1 {
 	margin-bottom: 0;
 }
 
-button {
-	border: none;
-	border-radius: 30px;
-	padding: 10px;
-	background-color: #0A8754;
-	color: white;
-	font-size: 1.2em;
-}	
+.row {
+	display: flex;
+}
+
+.col-md-4 {
+	flex: 1;
+}
 
 .iframe p {
 	max-width: 600px;
@@ -42,13 +35,8 @@ button {
 
 .preset-buttons button:focus, .preset-buttons button:hover, 
 .search-results button:focus, .search-results button:hover {
-	background-color: #2D3047;
 	cursor: pointer;
 	outline: none;
-}
-
-main {
-	color: white;
 }
 
 .more-info {
@@ -101,29 +89,30 @@ form {
 
 fieldset {
 	font-size: 1.2em;
-	color: white;
 	margin: 0 10px;
 	text-align: left;
 }
 
 label {
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid inherit;
 	font-size: 1.2em;
 }
 
-form button {
+button {
 	transition: background-color 0.5s ease,
 	color 0.5s ease;
 	background-color: white;
 	color: #0A8754;
-	width: 33.3%;
 	margin-right: auto;
 	margin-bottom: 10px;
+	border: none;
+	border-radius: 30px;
+	padding: 10px;
+	font-size: 1.2em;
 }
 
-form button:focus, form button:hover {
-	background-color: #2D3047;
-	color: white;
+button:focus, button:hover {
+	background-color: #000;
 	outline: none;
 	cursor: pointer;
 }
@@ -138,17 +127,18 @@ button.more-info {
 	color 0.5s ease;
 	text-decoration: underline;
 	background-color: transparent;
-	color: white;
 	font-size: 1.3em;
+	color: #000;
 }
 
 button.more-info:hover {
-	color: red;
+	color: #0A8754;
 	cursor: pointer;
 }
 
 button.more-info:focus {
 	outline-color: #0A8754;
+	color: #0A8754;
 }
 
 .preset-buttons, .buttons,
@@ -213,7 +203,7 @@ button.more-info:focus {
 }
 
 footer a {
-	color: white;
+	color: #000;
 	text-decoration: underline;
 }
 
