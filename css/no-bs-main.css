@@ -15,6 +15,7 @@ section {
 
 .row {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .row-item {
@@ -46,6 +47,13 @@ button:hover, a:hover {
 
 button {
     font-family: 'Oswald', sans-serif;
+}
+
+.shadow, .search-results button, .buttons button {
+	box-shadow: 
+		0 8px 10px 1px rgba(0,0,0,.14), 
+		0 3px 14px 2px rgba(0,0,0,.12), 
+		0 5px 5px -3px rgba(0,0,0,.2);
 }
 
 input {
@@ -86,4 +94,79 @@ h3, ul {
     text-decoration: none;
     color: #0A8754;
     background-color: transparent;
+}
+
+@media only screen and (min-width: 640px) {
+	h1 {
+		font-size: 5em;
+	}
+	.header-main p {
+		font-size: 2em;
+	}
+	main {
+		min-height: 800px;
+	}
+	.form {
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	form {
+		margin-top: 60px;
+	}
+
+	fieldset {
+		margin: 0 auto;
+	}
+
+	form button {
+		width: 15%;
+	}	
+	.info {
+		margin-bottom: 50px;
+	}	
+	.more-info-container p {
+		max-width: 600px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+		iframe {
+			width: 560px; 
+			height: 315px; 
+	}
+
+	#search-fail {
+		font-size: 1.2em;
+	}
+
+	#search-fail-image {
+		max-width: 500px;
+	}
+
+	#search-fail {
+	position: relative;
+	top: 300px;
+	}
+
+	.quote {
+		max-width: 800px;
+	}
+
+	.quote img {
+		display: inline;
+		float: left;
+		margin-right: 10px;
+	}
+
+	.right {
+		padding-right: 50px;
+	}
+	.right a {
+		margin-left: 10px;
+	}
+	footer {
+		font-size: 1.25em;
+	}
+
 }
