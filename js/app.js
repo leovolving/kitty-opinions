@@ -127,9 +127,7 @@ const generateSearchResultLocationButtons = venues => {
   venues.forEach((venue, index) => {
     result += `
         ${generateOpeningRowDiv(index)}
-            <div class="col-md-4 new-search-results">
-                ${createLocationButton(venue)}
-            </div>
+          ${createLocationButton(venue)}
         ${generateClosingRowDiv(index)}
     `;});
   return result;
@@ -166,7 +164,7 @@ const toggleMoreInfo = (e) => {
 
 const setupListeners = () => {
   addEventListenersToClassList('search-form', 'submit', displaySearchResults);
-  addEventListenersToClassList('more-info', 'click', toggleMoreInfo);
+  addEventListenersToClassList('more-info-button', 'click', toggleMoreInfo);
 };
 
 displayPresetLocations();
