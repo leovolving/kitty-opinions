@@ -3,3 +3,22 @@ body {
     font-family: 'Oswald', sans-serif;
 	font-size: 1.1em;
 }
+
+.row {
+    display: flex;
+}
+
+.row-item {
+    flex: 1;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.row-footer-right {
+    flex-flow: row;
+    justify-content: flex-end;
+}

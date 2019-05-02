@@ -27,18 +27,13 @@ const displayPresetLocations = () => {
       id: '3fd66200f964a520ddf01ee3',
       name: 'Yankee Stadium'
     }];
-  presetLocations.forEach(location => {
-    presetHtml += `
-        <div class="preset-buttons-entry">
-            ${createLocationButton(location)}
-        </div>`;
-  });
+  presetLocations.forEach(location => presetHtml += createLocationButton(location));
   document.getElementById('preset-container').innerHTML = presetHtml;
   addEventListenersToClassList('location-button', 'click', displayLocationData);
 };
 
 const createLocationButton = location => `
-    <button type="submit" class="location-button" id="${location.id}" data-fancybox data-src="#fancybox-container">
+    <button type="submit" class="location-button row-item" id="${location.id}" data-fancybox data-src="#fancybox-container">
         ${location.name}
     </button>`;
 
