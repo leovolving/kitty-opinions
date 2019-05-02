@@ -4,6 +4,15 @@ body {
 	font-size: 1.1em;
 }
 
+h1 {
+	font-family: 'Indie Flower';
+	margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
 .row {
     display: flex;
 }
