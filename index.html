@@ -12,70 +12,71 @@
 		<link rel="icon" type="image/icon" href="img/favicon.ico">
 	</head>
 	<body>
-		
-		<main>
 
-		<section class="header-main">
+		<header role="heading" class="header-main">
 			<h1>Kitty Opinions</h1>
 			<p>Foursquare + Cat GIFs + Ron Swanson quotes</p>
-		</section>	
+		</header>
+		
+		<main role="main">	
 
-		<section class="info container">
+		<section class="info container" role="region">
 			<div class="more-info-container" aria-hidden="true">
 				<p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
 					<p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
 					<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
 			</div>
-			<button class="more-info" type="submit">What?</button>
+			<button class="more-info" type="submit">More Info</button>
 		</section>
 
-		<section class="form">
+		<section class="form" role="region">
 			<form class="search-form">
 				<fieldset class="form-group">
+					<legend>Search the Foursquare database.</legend>
 					<div class="container">
-					<div class="row">
-				<div class="col-md-6">	
-					<label for="searchItem">Place</label>
-					<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="donuts, park, hospitals" required>
-				</div>	
-				<div class="col-md-6">
-					<label for="searchLocation">Location</label>
-					<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
-				</div>
-			</div>
-		</div>
+						<div class="row">
+							<div class="col-md-6">	
+								<label for="searchItem">Venue</label>
+								<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="donuts, park, hospitals" required>
+							</div>	
+							<div class="col-md-6">
+								<label for="searchLocation">Location</label>
+								<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
+							</div>
+						</div>
+					</div>
 				</fieldset>
 				<button type="submit" class="searchSubmit shadow">Submit</button>
 			</form>
 		</section>
 
-			<section class="search-results container js-buttons"></section>
+			<section class="search-results container js-buttons" role="region"></section>
 
-				<section class="preset-buttons container js-buttons">
+				<section class="preset-buttons container js-buttons" role="region">
 					<h2>Can't decide? Choose a popular location...</h2>
 					<div class="buttons" id="preset-container"></div>
-			</section>
+				</section>
 
 
-			<section class="iframe" id="fancybox-container">
+			<section class="iframe" id="fancybox-container" role="region">
 				<div class="results"></div>
 				<div class="quote"></div>
 			</section>
 		</main>
 
-		<footer>
+		<footer role="contentinfo">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="left">Sources:
-							<li><a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a> |</li>
-							<li><a href="https://thecatapi.com/" target="blank" rel="noopener noreferrer">The Cat API</a> |</li>
+							<li><a href="https://foursquare.com/" target="_blank" rel="noopener noreferrer">Foursquare</a> |</li>
+							<li><a href="https://thecatapi.com/" target="_blank" rel="noopener noreferrer">The Cat API</a> |</li>
 							<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
 						</ul>
-						<ul class="right">Made by L.J. Yockey.
-							<li><a href="https://medium.com/@Ljyockey" target="blank" rel="noopener noreferrer"><i class="fa fa-medium fa-2x" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a></li>						
-							<li><a href="https://twitter.com/Ljyockey" target="blank" rel="noopener noreferrer"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a></li>
-							<li><a href="https://github.com/Ljyockey/kitty-opinions" target="blank" rel="noopener noreferrer"><i class="fa fa-github fa-2x" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a></li>							
+						<ul class="right">Made by Leo Yockey.
+							<li><a href="https://medium.com/@Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-medium fa-2x" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a></li>						
+							<li><a href="https://twitter.com/Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a></li>
+							<li><a href="https://github.com/Ljyockey/kitty-opinions" target="_blank" rel="noopener noreferrer"><i class="fa fa-github fa-2x" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a></li>							
 						</ul>
 					</div>
 				</div>
@@ -85,7 +86,6 @@
 		<script src="https://use.fontawesome.com/e2a5a772d8.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-		<!-- <script type="text/javascript" src="js/app.js"></script> -->
 		<script type="text/javascript" src="js/no-jq-app.js"></script>
 	</body>
 </html>
