@@ -120,7 +120,7 @@ const getApiSearch = (searchItem, location) => {
   return requestData(foursquareSearchUrl, query)
     .then(response => {
       containerElement.innerHTML = generateSearchResultLocationButtons(response.response.venues);
-      addEventListenersToClassList('new-search-results', 'click', displayLocationData);
+      addEventListenersToClassList('location-button', 'click', displayLocationData);
     }).catch(e => containerElement.innerHTML = displaySearchFailure());
 };
 
