@@ -10,7 +10,8 @@ header, .info {
 
 h1 {
 	font-family: 'Indie Flower';
-	margin-bottom: 15px;
+    margin-bottom: 15px;
+    margin-top: 0;
 }
 
 section {
@@ -26,6 +27,10 @@ section {
     flex: 1;
     margin-left: 1%;
     margin-right: 1%
+}
+
+.row-space {
+    justify-content: space-around;
 }
 
 button {
@@ -68,14 +73,18 @@ input {
     font-size: 1.1em;
 }
 
-ul {
-  display: flex;
-  list-style-type: none;
-  padding-left: 10px;
-}
-
 h3, ul {
     margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    margin-left: 10px;
+    list-style-type: none;
+    padding-left: 5px;
 }
 
 .row-footer-right {
