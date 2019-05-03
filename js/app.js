@@ -24,8 +24,8 @@ const displayPresetLocations = () => {
       name: 'Space Needle'
     },
     {
-      id: '3fd66200f964a520ddf01ee3',
-      name: 'Yankee Stadium'
+      id: '40dcbc80f964a52081011fe3',
+      name: 'Wrigley Field'
     }];
   presetLocations.forEach(location => presetHtml += createLocationButton(location));
   document.getElementById('preset-container').innerHTML = presetHtml;
@@ -55,7 +55,13 @@ const requestData = (url, query) => {
   });
 };
 
+const clearLocationDetails = (event) => {
+  document.getElementsByClassName('results')[0].innerHTML = '';
+  document.getElementsByClassName('quote')[0].innerHTML = '';
+}
+
 const displayLocationData = (event) => {
+  console.log('displayLocationData', event.target)
   const locationId = event.target.id;
 
   const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
@@ -69,6 +75,7 @@ const displayLocationData = (event) => {
 
     document.getElementsByClassName('results')[0].innerHTML = getLocationDetailsHtml(venueData);
     document.getElementsByClassName('quote')[0].innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
+    addEventListenersToClassList('fancybox-close-small', 'click', clearLocationDetails);
   });
 };
 
