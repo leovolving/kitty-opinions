@@ -33,6 +33,21 @@ section {
     justify-content: space-around;
 }
 
+.row-form {
+    justify-content: space-around;
+    align-content: center;
+    height: 100%; 
+}
+
+fieldset {
+    border: none;
+    height: 100px;
+    background: #eee;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    line-height: 0;
+}
+
 button {
     transition: background-color 0.5s ease,
 	color 0.5s ease;
@@ -43,7 +58,8 @@ button {
 	border: none;
 	border-radius: 30px;
 	padding: 10px;
-	font-size: 1.2em;
+    font-size: 1.2em;
+    font-family: 'Oswald', sans-serif;
 }
 
 button:hover, button:focus {
@@ -52,10 +68,6 @@ button:hover, button:focus {
 
 button:hover, a:hover {
     cursor: pointer;
-}
-
-button {
-    font-family: 'Oswald', sans-serif;
 }
 
 .searchSubmit {
@@ -133,7 +145,8 @@ li {
 	}
 
 	fieldset {
-		margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
 	}
 
 	form button {
