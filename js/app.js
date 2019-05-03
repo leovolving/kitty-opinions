@@ -61,7 +61,6 @@ const clearLocationDetails = (event) => {
 }
 
 const displayLocationData = (event) => {
-  console.log('displayLocationData', event.target)
   const locationId = event.target.id;
 
   const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
