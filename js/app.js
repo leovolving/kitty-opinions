@@ -123,9 +123,9 @@ const getApiSearch = (searchItem, location) => {
     }).catch(e => containerElement.innerHTML = displaySearchFailure());
 };
 
-const generateOpeningRowDiv = i => i % 3 === 0 ? '<div class="row">' : '';
+const generateOpeningRowDiv = i => i % 2 === 0 ? '<div class="row">' : '';
 
-const generateClosingRowDiv = i => i % 3 === 2 ? '</div>' : '';
+const generateClosingRowDiv = i => i % 2 === 1 ? '</div>' : '';
 
 const generateSearchResultLocationButtons = venues => {
   if (!venues.length) return displaySearchFailure();

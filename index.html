@@ -6,83 +6,72 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Search the foursquare database for locations; get a Ron Swanson quote and cat GIF regarding that location. For entertainment purposes only.">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" type="text/css" media="screen" />
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
-		<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto|Oswald" rel="stylesheet">
-		<!-- <link rel="stylesheet" type="text/css" href="css/main.css" /> -->
-		<link rel="stylesheet" type="text/css" href="css/no-bs-main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link rel="icon" type="image/icon" href="img/favicon.ico">
 	</head>
 	<body>
 
-		<header role="heading" class="header-main">
+		<header class="header-main">
 			<h1>Kitty Opinions</h1>
 			<p>Foursquare + Cat GIFs + Ron Swanson quotes</p>
 		</header>
 		
 		<main role="main">	
 
-		<section class="info container" role="region">
+		<section class="info container">
 			<button class="more-info-button" type="submit">More Info</button>
 			<div class="more-info-container visually-hidden" aria-hidden="true">
 				<p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
-			</div>
-			<div class="video">
-				<p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
-				<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
+				<div class="video">
+					<p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
+					<iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
+				</div>
 			</div>
 		</section>
 
-		<section class="form" role="region">
+		<section class="form-container">
 			<form class="search-form">
 				<fieldset class="form-group shadow">
 					<legend>Search the Foursquare database.</legend>
-					<div class="row row-form">
-						<div class="row-item">	
-							<label for="searchItem">Venue</label>
-							<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="donuts, park, hospitals" required>
-						</div>	
-						<div class="row-item">
-							<label for="searchLocation">Location</label>
-							<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
-						</div>
-					</div>
+						<label for="searchItem">Venue</label>
+						<input id="searchItem" type="text" class="form-control" name="searchItem" placeholder="donuts, park, hospitals" required>
+						<label for="searchLocation">Location</label>
+						<input id="searchLocation" type="text" class="form-control" name="searchLocation" placeholder="city or ZIP code" required>
 				</fieldset>
-				<button type="submit" class="searchSubmit shadow">Submit</button>
+				<input type="submit" class="submit-button" value="Submit">
 			</form>
 		</section>
 
-			<section class="search-results container js-buttons" role="region"></section>
+			<section class="search-results container js-buttons"></section>
 
-				<section class="preset-buttons container js-buttons" role="region">
+				<section class="preset-buttons container js-buttons">
 					<h2>Can't decide? Choose a popular venue:</h2>
 					<div class="buttons row" id="preset-container"></div>
 				</section>
 
 
-			<section class="iframe" id="fancybox-container" role="region">
+			<section class="iframe" id="fancybox-container">
 				<div class="results"></div>
 				<div class="quote"></div>
 			</section>
 		</main>
 
 		<footer role="contentinfo">
-			<div class="row row-space">
-				<div class="row row-footer-left">
-					<h3>Sources:</h3>
-					<ul class="row">
-						<li><a href="https://foursquare.com/" target="_blank" rel="noopener noreferrer">Foursquare</a></li>
-						<li><a href="https://thecatapi.com/" target="_blank" rel="noopener noreferrer">The Cat API</a></li>
-						<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
-					</ul>
-				</div>
-				<div class="row row-footer-right">
-					<h3>Made by Leo Yockey.</h3>
-					<ul class="row">
-						<li><a href="https://github.com/Ljyockey/kitty-opinions" target="_blank" rel="noopener noreferrer"><i class="fa fa-github fa-2x" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a></li>							
-						<li><a href="https://twitter.com/Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a></li>
-						<li><a href="https://medium.com/@Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-medium fa-2x" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a></li>						
-					</ul>
-				</div>
+			<div>
+				<h3>Sources:</h3>
+				<ul>
+					<li><a href="https://foursquare.com/" target="_blank" rel="noopener noreferrer">Foursquare</a></li>
+					<li><a href="https://thecatapi.com/" target="_blank" rel="noopener noreferrer">The Cat API</a></li>
+					<li><a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api" target="blank" rel="noopener noreferrer">Ron Swanson Quotes</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>&copy; Leo Yockey</h3>
+				<ul class="links">
+					<li><a href="https://github.com/Ljyockey/kitty-opinions" target="_blank" rel="noopener noreferrer"><i class="fa fa-github fa-2x" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a></li>							
+					<li><a href="https://twitter.com/Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a></li>
+					<li><a href="https://medium.com/@Ljyockey" target="_blank" rel="noopener noreferrer"><i class="fa fa-medium fa-2x" aria-hidden="true"></i><span class="visually-hidden">Medium</span></a></li>						
+				</ul>
 			</div>
 		</footer>
 

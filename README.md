@@ -10,8 +10,6 @@ If you can't decide on a location to search, there are 3 preloaded "popular loca
 
 <b>Languages</b> - HTML, CSS, JavaScript <br>
 <b>Librairies</b> - 
-	<a href="https://jquery.com/">jQuery</a>, 
-	<a href="http://getbootstrap.com/">BootStrap</a>, 
 	<a href="http://fancybox.net/">Fancybox</a> <br>
 <b>APIs</b> - 
 	<a href="https://foursquare.com/" target="blank" rel="noopener noreferrer">Foursquare</a>, 
