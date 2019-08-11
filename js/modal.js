@@ -53,13 +53,15 @@ class Modal {
 
   render () {
     this.ref.innerHTML = (
-      `<div class="modal">
-        <div class="modal-header">
-          <h2 class="modal-title">${this.title}</h2>
-          <button id="modal-close-button" class="modal-close">${String.fromCharCode(10007)}</button>
-        </div>
-        <div class="modal-main">
-          ${this.modalBody.innerHTML}
+      `<div class="modal-background">
+        <div class="modal-root">
+          <div class="modal-header">
+            <h2 class="modal-title">${this.title}</h2>
+            <button id="modal-close-button" class="modal-close">${String.fromCharCode(10007)}</button>
+          </div>
+          <div class="modal-main">
+            ${this.modalBody.innerHTML}
+          </div>
         </div>
       </div>`
     );
