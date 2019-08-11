@@ -72,9 +72,19 @@ const displayLocationData = (event) => {
     const catGifSrc = responses[1][0].url;
     const swansonQuote = responses[2][0];
 
-    document.getElementsByClassName('results')[0].innerHTML = getLocationDetailsHtml(venueData);
-    document.getElementsByClassName('quote')[0].innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
-    addEventListenersToClassList('fancybox-close-small', 'click', clearLocationDetails);
+    const modalBodyDiv = document.createElement('div')
+    const resultsDiv = document.createElement('div')
+    resultsDiv.classList.add('results')
+    const quoteDiv = document.createElement('div')
+    quoteDiv.classList.add('quote')
+
+    resultsDiv.innerHTML = getLocationDetailsHtml(venueData);
+    quoteDiv.innerHTML = getQuoteHtml(venueData, catGifSrc, swansonQuote);
+    modalBodyDiv.appendChild(resultsDiv)
+    modalBodyDiv.appendChild(quoteDiv)
+    
+    const modal = new Modal(venueData.name, modalBodyDiv, event.target, 'modal-container')
+    modal.openModal()
   });
 };
 
@@ -85,7 +95,6 @@ const generateLocationPhotosHtml = (photoList) => photoList
   : '<p>No photos :(</p>';
 
 const getLocationDetailsHtml = (venueData) => `
-  <h2>${venueData.name}</h2>
   <p>${createAddressText(venueData.location)}, ${venueData.location.city}, ${venueData.location.country}</p>
   ${generateLocationPhotosHtml(venueData.photos.groups[1])}
 `;

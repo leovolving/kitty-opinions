@@ -1,0 +1,22 @@
+.modal {
+  background-color: #fff;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 1px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 1px rgba(0, 0, 0, 0.2),
+    2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-close {
+  border: none;
+}
