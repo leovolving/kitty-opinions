@@ -33,7 +33,7 @@ const displayPresetLocations = () => {
 };
 
 const createLocationButton = location => `
-    <button type="submit" class="location-button row-item" id="${location.id}" data-fancybox data-src="#fancybox-container">
+    <button type="submit" class="location-button row-item" id="${location.id}">
         ${location.name}
     </button>`;
 
@@ -63,7 +63,29 @@ const clearLocationDetails = (event) => {
 const displayLocationData = (event) => {
   const locationId = event.target.id;
 
-  const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
+  // const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
+  const foursquareRequest = {
+    response: {
+      venue: {
+        name: 'Disneyland',
+        id: 'dis',
+        location: {
+          address: '1313 Walt St.',
+          city: 'Anaheim',
+          country: 'USA',
+        },
+        photos: {
+          groups: ['',{
+            items: [{
+              prefix: 'foo',
+              suffix: '.jpg'
+            }]
+          }]
+        },
+        rating: 9.2
+      }
+    }
+  }
   const catGifRequest = requestData(catApiUrl);
   const swansonRequest = requestData(swansonQuoteUrl);
 
@@ -91,7 +113,7 @@ const displayLocationData = (event) => {
 const createAddressText = location => location.address || 'address unknown';
 
 const generateLocationPhotosHtml = (photoList) => photoList
-  ? photoList.items.map(item => `<a href="${item.prefix}200x200${item.suffix} data-fancybox="images"><img src="${item.prefix}150x150${item.suffix}"></a>`)
+  ? photoList.items.map(item => `<img alt="cat gif" src="${item.prefix}150x150${item.suffix}">`)
   : '<p>No photos :(</p>';
 
 const getLocationDetailsHtml = (venueData) => `
