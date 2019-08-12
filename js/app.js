@@ -204,5 +204,26 @@ const setupListeners = () => {
   addEventListenersToClassList('more-info-button', 'click', toggleMoreInfo);
 };
 
+const setupAccordion = () => {
+  const items = [
+    {
+      title: 'About this site',
+      body: `
+      <p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
+      `
+    },
+    {
+      title: 'About Ron Swanson',
+      body: `
+      <p>This app is for entertainment purposes only. Don't know Ron Swanson? Check out this video:</p>
+      <iframe src="https://www.youtube.com/embed/SrLZgP-OR6s" frameborder="0" allowfullscreen></iframe>
+      `
+    }
+  ]
+  const accordion = new Accordion(items, 'accordion-container');
+  accordion.render()
+}
+
+setupAccordion();
 displayPresetLocations();
 setupListeners();
