@@ -63,29 +63,7 @@ const clearLocationDetails = (event) => {
 const displayLocationData = (event) => {
   const locationId = event.target.id;
 
-  // const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
-  const foursquareRequest = {
-    response: {
-      venue: {
-        name: 'Disneyland',
-        id: 'dis',
-        location: {
-          address: '1313 Walt St.',
-          city: 'Anaheim',
-          country: 'USA',
-        },
-        photos: {
-          groups: ['',{
-            items: [{
-              prefix: 'foo',
-              suffix: '.jpg'
-            }]
-          }]
-        },
-        rating: 9.2
-      }
-    }
-  }
+  const foursquareRequest = requestData(foursquareVenueUrl + locationId, fourSquareQuery);
   const catGifRequest = requestData(catApiUrl);
   const swansonRequest = requestData(swansonQuoteUrl);
 
