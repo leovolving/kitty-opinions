@@ -13,7 +13,7 @@ class Accordion {
   }
 
   handleArrowKeyNavigation (className, event) {
-    if (document.activeElement.className === className) {
+    if (document.activeElement.classList.contains(className)) {
       const options = document.getElementsByClassName(className);
       const currentFocusedOptionIndex = parseInt(document.activeElement.id.split(className + '-')[1]);
   
@@ -50,7 +50,7 @@ class Accordion {
   }
 
   onKeyDown (event) {
-    this.handleArrowKeyNavigation('accordion-header', event);
+    this.handleArrowKeyNavigation('accordion-header-button', event);
   }
 
   render () {
@@ -58,27 +58,32 @@ class Accordion {
     accordionRoot.onkeydown = this.onKeyDown;
 
     this.items.forEach((item, i) => {
+      // create button element
       const button = document.createElement('button');
       button.setAttribute('aria-expanded', this.openIndex === i);
-      button.id = `accordion-header-${i}`;
-      button.onclick = e => this.onClick(e, i);
-      button.classList.add('accordion-header');
+      button.id = `accordion-header-button-${i}`;
+      button.classList.add('accordion-header-button');
+      button.classList.add(this.openIndex === i ? 'accordion-header-button--expanded' : 'accordion-header-button--collapsed');
+      button.onclick = () => this.onClick(i);
       button.innerText = item.title;
-
+      
+      // create h3 element and append button
       const h3El = document.createElement('h3');
+      h3El.classList.add('accordion-header');
       h3El.appendChild(button);
 
+      // create container div and append h3
       const itemDiv = document.createElement('div');
       itemDiv.appendChild(h3El);
 
-      if (this.openIndex === i) {
-        const bodyDiv = document.createElement('div');
-        bodyDiv.classList.add('accordion-item');
-        bodyDiv.id = `accordion-item-${i}`;
-        bodyDiv.innerHTML = item.body;
-
-        itemDiv.appendChild(bodyDiv);
-      }
+      // create and append body div (content)
+      const bodyDiv = document.createElement('div');
+      bodyDiv.classList.add('accordion-item');
+      bodyDiv.classList.add(this.openIndex === i ? 'accordion-item--expanded' : 'accordion-item--collapsed');
+      bodyDiv.setAttribute('aria-hidden', !(this.openIndex === i));
+      bodyDiv.id = `accordion-item-${i}`;
+      bodyDiv.innerHTML = item.body;
+      itemDiv.appendChild(bodyDiv);
 
       accordionRoot.appendChild(itemDiv);
     });

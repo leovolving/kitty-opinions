@@ -208,9 +208,7 @@ const setupAccordion = () => {
   const items = [
     {
       title: 'About this site',
-      body: `
-      <p>Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location's Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.</p>
-      `
+      body: 'Search for any location within Foursquare and get the top 6 results. Click on a location for more info as well as a "tip/review", which contains the location\'s Foursquare rating (if any), a Cat GIF and a Ron Swanson quote.'
     },
     {
       title: 'About Ron Swanson',
