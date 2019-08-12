@@ -12,25 +12,29 @@ class Accordion {
     this.onKeyDown = this.onKeyDown.bind(this);
   }
 
-  handleArrowKeyNavigation (className, keyCode) {
+  handleArrowKeyNavigation (className, event) {
     if (document.activeElement.className === className) {
       const options = document.getElementsByClassName(className);
       const currentFocusedOptionIndex = parseInt(document.activeElement.id.split(className + '-')[1]);
   
       let targetIndex;
-      switch (keyCode) {
+      switch (event.keyCode) {
       case 40:
+        event.preventDefault();
         targetIndex = (currentFocusedOptionIndex + 1) % options.length;
         options[targetIndex].focus();
         break;
       case 38:
+        event.preventDefault();
         targetIndex = currentFocusedOptionIndex === 0 ? options.length-1 : currentFocusedOptionIndex-1;
         options[targetIndex].focus();
         break;
       case 36:
+        event.preventDefault();
         options[0].focus();
         break;
       case 35:
+        event.preventDefault();
         options[options.length-1].focus();
         break;
       default:
@@ -40,13 +44,13 @@ class Accordion {
   }
 
 
-  onClick (event, index) {
+  onClick (index) {
     this.openIndex = this.openIndex === index ? null : index;
     this.render();
   }
 
   onKeyDown (event) {
-    this.handleArrowKeyNavigation('accordion-header', event.keyCode);
+    this.handleArrowKeyNavigation('accordion-header', event);
   }
 
   render () {
