@@ -18,7 +18,6 @@ class Modal {
     this.render();
 
     this.toggleElementsFromTabOrder();
-    document.addEventListener('click', this.onClick);
     document.addEventListener('keydown', this.onKeydown);
   }
 
@@ -34,15 +33,12 @@ class Modal {
   closeModal () {
     this.originElement.focus();
     this.toggleElementsFromTabOrder();
-    document.removeEventListener('click', this.onClick);
     document.removeEventListener('keydown', this.onKeydown);
     this.ref.innerHTML = '';
   }
 
   onClick (event) {
-    if (!this.ref.contains(event.target)) {
-      this.closeModal();
-    }
+    event.stopPropagation();
   }
 
   onKeydown (event) {
@@ -53,8 +49,8 @@ class Modal {
 
   render () {
     this.ref.innerHTML = (
-      `<div class="modal-background">
-        <div class="modal-root">
+      `<div class="modal-background" id="overlay">
+        <div class="modal-root" id="modal-root">
           <div class="modal-header">
             <h2 class="modal-title">${this.title}</h2>
             <button id="modal-close-button" class="modal-close">${String.fromCharCode(10007)}</button>
@@ -70,5 +66,8 @@ class Modal {
     const closeButton = document.getElementById('modal-close-button');
     closeButton.focus();
     closeButton.addEventListener('click', this.closeModal);
+
+    document.getElementById('overlay').addEventListener('click', this.closeModal);
+    document.getElementById('modal-root').addEventListener('click', this.onClick);
   }
 }
